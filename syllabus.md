@@ -22,7 +22,7 @@ Software Quality Assurance - Fall 2022
 **Class Time and Location:**
 
   * Section 1080: Mon/Wed 3:00 PM - 4:15 PM @ 6110 Sennott Square
-  * Section 1270: Mon/Wed 9:30 AM - 10:45 AM @ TO BE ARRANGED
+  * Section 1270: Mon/Wed 9:30 AM - 10:45 AM @ 3415 Wesley W Posvar Hall
   * In-Person Synchronous
 
 **Instructor's Office Hours:**
