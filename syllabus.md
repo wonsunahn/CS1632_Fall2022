@@ -1,3 +1,16 @@
+- [CS 1632](#cs-1632)
+  * [Course Information](#course-information)
+  * [Grading](#grading)
+  * [Group Work](#group-work)
+  * [Excercise Details](#excercise-details)
+  * [Deliverable Details](#deliverable-details)
+  * [Assignment submission](#assignment-submission)
+  * [Programming Language Selection](#programming-language-selection)
+  * [Participating in Class](#participating-in-class)
+  * [Disability Services Statement](#disability-services-statement)
+  * [Academic Integrity Statement](#academic-integrity-statement)
+  * [Back to In-Person](#back-to-in-person)
+
 # CS 1632
 Software Quality Assurance - Fall 2022
 
@@ -59,16 +72,13 @@ the deliverables.
   * Exercise submissions (satisfactory / unsatisfactory)
   * Teams participation
 
-TopHat questions will be asked in class on the day that the recorded lectures
-are due, usually at the beginning of each week.  You will be given typically
-one minute to answer each question.  0.5 points are participation points and
-0.5 points are correctness points for each 1 point per question.
-
-Exercise submissions are unscored (as in your actual score doesn't matter).
-You will get full credit if you submit "satisfactory" work.  By satisfactory, I
-mean you did not just submit the skeleton code and you put some kind of effort
-into doing the exercise.  Since these are unscored, you are encouraged to learn
-from your classmates, including by sharing each other's source code.
+TopHat questions will be asked in class on days where there are lectures
+assigned as Prerequisites on the [Schedule](schedule.md), on Monday at the
+beginning of each week.  You are expected to have listened to the lectures
+before coming t class.  You will be given one minute to answer each question.
+0.5 points are participation points and 0.5 points are correctness points for
+each 1 point per question.  Sometimes, I will assign TopHat questions that we
+don't have time to cover in class as homework. 
 
 Exams will NOT be allowed to be made up except with a valid and verified excuse
 (generally medical - others are left to the discretion of the instructor).
@@ -91,35 +101,51 @@ Score  | Grade
 62.99-60.00  | D-
 59.99-0.00   | F
 
-## Assignment submission
-
-All exercises and deliverables will be submitted using GradeScope.
-
-Assignments should be committed and pushed to GitHub to _a private repository_
-and then submitted to GradeScope.  Some assignments also require write-ups that
-needs to be submitted to GradeScope.  The format of the write-up will be
-specified on each assignment.  Students are encourged to commit early and often
-to the GitHub repository as commit history will be used as the ground truth for
-proof of work (especially as it relates to a group project).  Also, frequent
-commits help avoid conflicts when working on the same files as your partner.  
-
-If any disputes from groups arise, I will assume that GitHub is the "ground
-truth".  For example, if Partner A insists that they did all the work, but
-GitHub history shows only commits by Partner B, I will assume that Partner B
-has done all the work.
-
-Late assignments will receive a -5 percentage point penalty per day (e.g., if
-you would have received a 90% on an assignment, but you turned it in 3 days
-late, you would receive 90 - 15 = 75%.).  
-
 ## Group Work
 
-Please submit the Partnership Contract on GradeScope.  Your
+One of the learning goals of this class is to learn to collaborate effectively
+as part of a team using tools like git repositories, code live sharing, and
+Teams communication.  You are highly encouraged to find and work with a
+partner.  If you cannot find a partner you would like to work with, then you
+are allowed to work alone.
+
+Either way, please submit the Partnership Contract on GradeScope.  Your
 expectations as a group member are outlined clearly on the contract.  You may
 resubmit the contract at a later time, at which time the new contract will come
-into effect.
+into effect.  All exercises (except the very first Java Assessment Exercise)
+and deliverables will be done as group work in this class.
 
-## Project Details
+## Excercise Details
+
+Exercises are unscored, as in the score that you get on GradeScope will not be
+factored into your grade.  As long as you didn't get a 0 score (or you didn't
+submit), your exercise will be marked as complete and be counted towards your
+participation score.  You will get credit if you submit "satisfactory" work.
+By satisfactory, I mean you did not just submit the skeleton code and you put
+reasonable effort into doing the exercise.  
+
+The purpose of the exercises are to prepare you for the deliverables and get
+feedback on mistakes you made so that you don't make the same mistakes on your
+deliverables.  Since exercises are unscored, you are free to discuss them with
+your classmates, including sharing each other's code.
+
+Exercises will be **released on Monday** in class.  You will be given time
+in-class on Monday to complete it and if you don't, you can keep working on it
+on Wednesday as well.  On Wednesday, we will discuss the exercise and you will
+have a chance to ask questions if you had any difficulties.  You can finish up
+and **submit by Friday midnight**.
+
+* **Exercise 0:** Java assessment exercise
+* **Exercises 1-5:** Exercises that prepare you for the corresponding deliverable
+* **Supplementary Exercises 1-4:** Supplementary exercises that are unrelated to a deliverable
+
+## Deliverable Details
+
+All deliverables are scored and constitute the bulk of the grade for the class.
+By the time you start on the deliverable, you would have done the corresponding
+exercise so you should be well prepared (in theory).  If you still have
+questions, please ask your instructor.  Plese do not discuss your solutions or
+share your code with your classmates --- you have the exercises for that purpose.
 
 * **Deliverable 1:** Developing a test plan and traceability matrix for a system.
 * **Deliverable 2:** Developing unit tests for a console-based application.
@@ -127,25 +153,33 @@ into effect.
 * **Deliverable 4:** Performance testing and optimization of an application.
 * **Deliverable 5:** Developing and testing an application using both static and dynamic testing.
 
-## Excercise Details
+## Assignment submission
 
-Exercises are unscored, as in the score that you get on GradeScope will not be
-factored into your grade.  As long as you didn't get a 0 score (or you didn't
-submit), your exercise will be marked as complete and be counted towards your
-participation score.  The purpose of the exercises are to prepare you for the
-deliverables and get feedback on mistakes you made so that you don't make the
-same mistakes on your deliverables.  Since exercises are unscored, you are free
-to discuss them with your classmates, including sharing each other's code.
+All exercises and deliverables will be submitted using GradeScope.
 
-Exercises will be **released on Tuesdays** in class.  You will be given time
-in-class on Tuesday to complete it and if you don't, you can keep working on it
-on Thursday as well.  On Thursday, we will discuss the exercise and you will
-have a chance to ask questions if you had any difficulties.  You can finish up
-and **submit by Friday midnight**.
+Most assignments will be done in a GitHub Classroom repository.  The repository
+will allow you to collaborate effectively with your partner and also keep a
+history of all past modifications for versioning purposes.  The repository can
+be submitted in its entirety to GradeScope.  Make sure you commit and push your
+changes before submitting.  
 
-* **Exercise 0:** Java assessment exercise
-* **Exercises 1-5:** Exercises that prepare you for the corresponding deliverable
-* **Supplementary Exercises 1-4:** Supplementary exercises that are unrelated to a deliverable
+You are encourged to commit early and often to the repository as commit history
+will be used as the ground truth for proof of work (especially as it relates to
+a group project).  Also, frequent commits help avoid version conflicts when
+working on the same files as your partner.  If any disputes from groups arise,
+I will assume that GitHub is the "ground truth".  For example, if Partner A
+insists that they did all the work, but GitHub history shows only commits by
+Partner B, I will assume that Partner B has done all the work.  Please keep
+your repository **private** at all times to prevent plagiarism.
+
+Some assignments require write-ups that need to be submitted to GradeScope.
+The format of the write-up will be specified on each assignment.  To
+collaborate on these write-ups, it may be easier to use cloud shared docs (such
+as Goodle Docs).
+
+Late assignments will receive a -5 percentage point penalty per day (e.g., if
+you would have received a 90% on an assignment, but you turned it in 3 days
+late, you would receive 90 - 15 = 75%.).  
 
 ## Programming Language Selection
 
@@ -160,11 +194,7 @@ several ways you can participate:
 1. In-class
 
     If you are in-person and you have a question, just interrupt me and
-interject.  If you are online unmute your mic and interject.  Raising your hand
-is optional (whether physical or virtual).  If I miss your raised hand, it's
-not because I want to ignore you but it's probably because there are too many
-things going on at the same time.  So interrupting me is not rude, it's a
-necessity.
+interject.  Raising your hand is optional.  
 
 2. Offline
 
@@ -189,12 +219,12 @@ individual.
     For the fastest response, please use Teams chat.
 
 When you ask a source-code-specific question about an exercise or deliverable,
-please submit your code to GradeScope so that I can reproduce your error.
+please submit your code to GradeScope first so that I can reproduce your error.
 Also, describe precisely the steps I should take to reproduce your error.
 Before you do this, it is very hard for me to help you.
 
 I will try to get back to all offline communications within 24 hours of
-receipt.  Even if I'm logged into Teams, please understand that I may be away
+receipt.  Even if I'm logged onto Teams, please understand that I may be away
 from my desk or working on something else.  Meanwhile, feel free to answer each
 other's questions!
 
@@ -223,9 +253,14 @@ will receive a minimum sanction of a zero score for the exam or assignment.
 
 Some guidelines:
 
-_1. For unscored in-class exercises, you are allowed (and encouraged) to look at your classmates' work and discuss it.  If you get ample help for the exercises, you should rarely need additional help for the deliverables._
+_1. For unscored in-class exercises, you are allowed (and encouraged) to look
+at your classmates' work and discuss it.  If you get ample help for the
+exercises, you should rarely need additional help for the deliverables._
 
-_2. For all scored deliverables and exams, viewing the work done by your classmates (or a 3rd source) before submission is considered cheating.  Aiding this activity is also considered cheating.  The only exception is your designated group members for your group projects._
+_2. For all scored deliverables and exams, viewing the work done by your
+classmates (or a 3rd source) before submission is considered cheating.  Aiding
+this activity is also considered cheating.  The only exception is your
+designated group members for your group projects._
 
 _3. If you have any question about the exercises, I encourage you to post it
 publicly on the appropriate Teams channel.  The same goes for questions about
