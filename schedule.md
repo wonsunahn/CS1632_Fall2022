@@ -19,10 +19,6 @@ AFIST = [_A Friendly Introduction to Software Testing_](software-quality-assuran
   * Prerequisite: Submit the [Java Assessment Exercise](exercises/0) on GradeScope
   * Prerequisite: Submit the Partnership Contract on GradeScope
 
-* Listen to lectures
-  * Defects (READING: AFIST, Chapters 9)
-  * Breaking Software (READING: AFIST, Chapters 7)
-
 ## WEEK 3 (Week of 12 SEP)
   
 * Class 1: In-class Exercise 2: Unit Testing
