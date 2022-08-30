@@ -74,25 +74,19 @@ AFIST = [_A Friendly Introduction to Software Testing_](software-quality-assuran
 
 ## WEEK 9 (Week of 24 OCT)
 
-* Class 1: In-class Supplementary Exercise 3: Testing Nondeterministic Software
+* Class 1: In-class Supplementary Exercise 3: Sanitizers
   * Prerequisite: Software QA and Nondeterminism Lecture
 
 * Class 2: Discuss In-class Supplementary Exercise 3
 
 ## WEEK 10 (Week of 31 OCT)
 
-* Class 1: In-class Supplementary Exercise 3: Property-based Testing / TopHat questions
-
-* Class 2: Discuss Supplementary Exercise 3 
-
-## WEEK 11 (Week of 7 NOV)
-
 * Class 1: In-class Exercise 5: Static Analysis Part 1
   * Prerequisite: Static Analysis Part 1 Lecture
 
 * Class 2: Discuss Exercise 5 Part 1 / Release Deliverable 5 
 
-## WEEK 12 (Week of 14 NOV)
+## WEEK 11 (Week of 7 NOV)
 
 * Deliverable 4 due Monday before class
 
@@ -102,7 +96,7 @@ AFIST = [_A Friendly Introduction to Software Testing_](software-quality-assuran
 
 * Class 2: Discuss Exercise 5 Part 2 
 
-## WEEK 13 (Week of 21 NOV)
+## WEEK 12 (Week of 14 NOV)
 
 * Class 1: In-class Supplementary Exercise 4: CI Pipelines
   * Prerequisite: Pairwise and Combinatorial Testing Lecture (READING: AFIST, Chapter 17)
@@ -110,6 +104,10 @@ AFIST = [_A Friendly Introduction to Software Testing_](software-quality-assuran
 
 * Class 2: In-class Supplementary Exercise 4: Dockers
   * Prerequisite: Security Testing Lecture (READING: AFIST, Chapter 20)
+
+## WEEK 13 (Week of 21 NOV)
+
+* Thanksgiving Break (NO CLASS)
 
 ## WEEK 14 (Week of 28 NOV)
 
