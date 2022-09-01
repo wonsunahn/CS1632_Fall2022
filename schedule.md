@@ -7,13 +7,15 @@ AFIST = [_A Friendly Introduction to Software Testing_](software-quality-assuran
 
 * Class 1: Course organization / Testing Theory Lecture (READING: AFIST, Chapters 2 - 4)
   
-* Class 2: Requirements Lecture (READING: AFIST, Chapters 5) / Test Plans Lecture (READING: AFIST, Chapters 6, 8) 
+* Class 2: Testing Theory Lecture (cont'd)
 
 ## WEEK 2 (Week of 5 SEP)
 
 * Class 1: NO CLASS (Labor Day)
 
 * Class 2: In-class Exercise 1: Test Plans / Release Deliverable 1
+  * Prerequisite: Requirements Lecture (READING: AFIST, Chapters 5)
+  * Prerequisite: Test Plans Lecture (READING: AFIST, Chapters 6, 8)
   * Prerequisite: Defects Lecture (READING: AFIST, Chapters 9)
   * Prerequisite: Breaking Software Lecture (READING: AFIST, Chapters 7)
   * Prerequisite: Submit the [Java Assessment Exercise](exercises/0) on GradeScope
