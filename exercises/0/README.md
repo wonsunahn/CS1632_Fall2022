@@ -141,6 +141,8 @@ If you use [Chocolatey](https://chocolatey.org/) as your package manager, and yo
 
 ### Setting up JDK 8 for MacOS
 
+Below instructions are assuming you are using the bash shell.  If you are using the zsh shell instead of the bash shell, please modify ~/.zshrc instead of ~/.bash_profile.  You can see what shell you are using by doing "ps" on the commandline. 
+
 1. Open ~/.bash_profile with your favorite editor (if you don't have one, just do "pico ~/.bash_profile")
 2. Add the following 2 lines at the bottom
    ```
@@ -151,7 +153,6 @@ If you use [Chocolatey](https://chocolatey.org/) as your package manager, and yo
 4. Relaunch the terminal and try doing "which java".  It should say /Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home/bin/java.
 5. Now you are good to go!  Otherwise, try doing "echo $PATH" and see if your path is not updated properly, or if there is some other Java installation before you.
 
-* If you are using the zsh shell instead of the bash shell, please modify ~/.zshrc instead of ~/.bash_profile.  You can see what shell you are using by doing "ps" on the commandline. 
 
 Alternatively, you can use [jEnv](https://www.jenv.be/) that allows you to switch Java versions easily on a Mac.  You will also need [Mac brew](https://brew.sh/) if you don't already have it.  These are just one liners to install so it should be pretty painless.
 
