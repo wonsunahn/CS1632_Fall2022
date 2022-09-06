@@ -33,14 +33,14 @@ AFIST = [_A Friendly Introduction to Software Testing_](software-quality-assuran
 
 ## WEEK 4 (Week of 19 SEP)
 
-* Deliverable 1 due Monday before class
-
 * Class 1: In-class Supplementary Exercise 1: Behavior Driven Development
   * Prerequisite: Behavior Driven Development Lecture
 
 * Class 2: Discuss In-class Supplementary Exercise 1
 
 ## WEEK 5 (Week of 26 SEP)
+
+* Deliverable 1 due Monday before class
 
 * Class 1: In-class Exercise 3: Automated System Testing / Release Deliverable 3
   * Prerequisite: Automated System Testing Lecture
