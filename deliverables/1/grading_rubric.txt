@@ -1,0 +1,48 @@
+Grading Rubric for D1
+
+* Introduction: 10% of grade
+
+Division of work listed:             ____ / 2.5 
+
+One base case clearly described:     ____ / 2.5
+
+One edge case clearly described:     ____ / 2.5
+
+One corner case clearly described:   ____ / 2.5
+
+* Test Plan: 40% of grade
+
+Preconditions list the actions
+performed to get to that state       ____ / 5
+
+Test cases include only EXPECTED
+behavior, not OBSERVED behavior:     ____ / 10
+
+Expected behavior is as specific
+as described in requirements:        ____ / 10
+
+Execution steps are numbered and
+clearly delineated:                  ____ / 5
+
+Clearly written:                     ____ / 10
+
+* Traceability Matrix: 20% of grade
+
+>= 1 Test case per requirement:      ____ / 10
+
+>= 1 Requirement per TC:             ____ / 10
+
+* Defects Found and Described: 30% of grade
+
+Must be >= 3 defects! 10% off for each missing one.
+
+Defects are Reproducible:            ____ / 10  
+(-5 if preconditions missing)
+
+Include expected/observed behavior:  ____ / 10
+
+Clearly written:                     ____ / 10
+  
+***
+
+Total:                               ____ / 100
