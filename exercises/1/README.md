@@ -15,7 +15,7 @@ Fall Semester 2022 - Exercise 1
 
 * DUE: September 12 (Monday), 2022 before class starts
 
-**GitHub Classroom Link:** TBD
+**GitHub Classroom Link:** https://classroom.github.com/a/yZzasJFJ
 
 This is going to be your first group assignment.  When you click on the GitHub
 Classroom link, you will be asked to either create a new team or join an
