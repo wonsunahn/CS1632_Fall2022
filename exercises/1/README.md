@@ -228,14 +228,14 @@ with the 6 items shown above.  For the title, use the content of the SUMMARY
 item.  When all is filled in, click on the "Submit new issue" button.  Now if
 you click on the "Issues" tab, you should see a new open issue:
 
-<img alt="Issues list" src=img/issues_list.png width=350>
+<img alt="Issues list" src=img/issues_list.png>
 
 Note that the issue has a "bug" tag and also has an assignee because I
 performed **triage** and determined that the issue was a bug and assigned it to
 myself.  If you open the issue, there is an option to add assignees and edit
 Labels as shown in the red box below:
 
-<img alt="Issues list" src=img/open_issue.png width=350>
+<img alt="Issues list" src=img/open_issue.png>
 
 Perform triage on your defect as I did by adding the bug label and assigning it
 to yourself.  
