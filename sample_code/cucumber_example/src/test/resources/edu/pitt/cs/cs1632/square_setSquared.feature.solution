@@ -1,0 +1,11 @@
+Feature: public void setSquared(Number n, int v)
+
+  # This is the minimal Gherkin you need to specify and test the behavior
+  # described in SquareTest.testSetSquared().
+  # Rules are optional so they have been omitted.
+  
+  Scenario: Call setSquared with v=3 and check that n is set to 9
+    Given a Square sq
+    And a Number n
+    When I call sq.setSquared(n, 3)
+    Then n is set to 9
