@@ -284,15 +284,7 @@ format -
 	EXECUTION STEPS:
 	POSTCONDITIONS:
 
-ON A NEW PAGE, list at least two defects found.  The defects should follow the
-defect reporting template:
-
-	IDENTIFIER:
-	SUMMARY:
-	DESCRIPTION:
-	REPRODUCTION STEPS:
-	EXPECTED BEHAVIOR:
-	OBSERVED BEHAVIOR:
+ON A NEW PAGE, copy and paste the link to your GitHub repository issues page with the 3 open issues.
 
 ## Submission
 
