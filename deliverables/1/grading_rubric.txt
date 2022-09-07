@@ -12,17 +12,18 @@ One corner case clearly described:   ____ / 2.5
 
 * Test Plan: 40% of grade
 
-Preconditions list the actions
-performed to get to that state       ____ / 5
-
-Test cases include only EXPECTED
-behavior, not OBSERVED behavior:     ____ / 10
-
-Expected behavior is as specific
-as described in requirements:        ____ / 10
+Preconditions include all state
+needed for reproducibility:          ____ / 5
 
 Execution steps are numbered and
 clearly delineated:                  ____ / 5
+
+Postconditions result in neither
+false positive nor false negative
+defects:                             ____ / 10
+
+Test cases include only EXPECTED
+behavior, not OBSERVED behavior:     ____ / 10
 
 Clearly written:                     ____ / 10
 
@@ -39,7 +40,11 @@ Must be >= 3 defects! 10% off for each missing one.
 Defects are Reproducible:            ____ / 10  
 (-5 if preconditions missing)
 
-Include expected/observed behavior:  ____ / 10
+Expected behavior is accurate
+according to requirements:           ____ / 5
+
+Observed behavior shows program
+behavior verbatim to help debugging: ____ / 5
 
 Clearly written:                     ____ / 10
   

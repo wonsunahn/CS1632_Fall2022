@@ -203,7 +203,7 @@ with the 3 open issues.
 * Introduction: 10% of grade
 * Test Plan: 40% of grade
 * Traceability Matrix: 20% of grade
-* Defects Found and Described: 30% of grade
+* Defects Reported: 30% of grade
 
 Please review the [grading_rubric.txt](grading_rubric.txt) for details.
 
