@@ -1,0 +1,43 @@
+package edu.pitt.cs.cs1632;
+
+import java.util.HashMap;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+import static org.junit.Assert.*;
+
+public class StepDefinitions {
+	/*
+	 * The steps are implemented assuming we are doing Systems Testing. I have used
+	 * hashmaps to enable multiple instances of Square and Number objects in the
+	 * Gherkin script. But you don't have to do something this fancy on the exam.
+	 * You can assume there is only one of each object.
+	 */
+
+	HashMap<String, Square> squareMap = new HashMap<String, Square>();
+	HashMap<String, Number> numberMap = new HashMap<String, Number>();
+
+	@Given("a Square {word}")
+	public void aSquare(String name) {
+		squareMap.put(name, new Square());
+	}
+
+	@Given("a Number {word}")
+	public void aNumber(String name) {
+		numberMap.put(name, new Number());
+	}
+
+	@When("I call {word}.setSquared\\({word}, {int})")
+	public void iCallSetSquared(String squareName, String numberName, Integer v) {
+		Square square = squareMap.get(squareName);
+		Number number = numberMap.get(numberName);
+		square.setSquared(number, v);
+	}
+
+	@Then("{word} is set to {int}")
+	public void isSetTo(String numberName, Integer v) {
+		Number number = numberMap.get(numberName);
+		assertEquals((int) v, number.getVal());
+	}
+}
