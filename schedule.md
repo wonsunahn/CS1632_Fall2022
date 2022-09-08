@@ -27,9 +27,9 @@ AFIST = [_A Friendly Introduction to Software Testing_](software-quality-assuran
   * Prerequisite: Automated and Manual Testing Lecture (READING: AFIST, Chapter 12)
   * Prerequisite: Unit Testing Part 1 Lecture (READING: AFIST, Chapter 13)
   * Prerequisite: Unit Testing Part 2 Lecture (READING: AFIST, Chapter 14)
-  * Prerequisite: Test-driven Development Lecture (READING: AFIST, Chapter 15)
 
 * Class 2: Discuss Exercise 2 / Release Deliverable 2
+  * Prerequisite: Test-driven Development Lecture (READING: AFIST, Chapter 15)
 
 ## WEEK 4 (Week of 19 SEP)
 
