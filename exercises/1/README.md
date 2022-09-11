@@ -13,7 +13,7 @@
 # CS 1632 - Software Quality Assurance
 Fall Semester 2022 - Exercise 1
 
-* DUE: September 12 (Monday), 2022 before class starts
+* DUE: September 14 (Wednesday), 2022 before class starts
 
 **GitHub Classroom Link:** https://classroom.github.com/a/yZzasJFJ
 
