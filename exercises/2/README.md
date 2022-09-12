@@ -21,9 +21,9 @@
 # CS 1632 - Software Quality Assurance
 Fall Semester 2022 - Exercise 2
 
-* DUE: September 16 (Friday), 2022 before class starts
+* DUE: September 16 (Friday), 2022 11:59 PM
 
-**GitHub Classroom Link:** TBD
+**GitHub Classroom Link:** https://classroom.github.com/a/Qu1nEFJd
 
 ## Before You Begin
 
@@ -178,11 +178,11 @@ invokes them one by one.  You should get a result that looks like this:
 
    [INFO]
    [INFO] --- jacoco-maven-plugin:0.8.4:report (post-unit-test) @ rentacat ---
-   [INFO] Loading execution data file C:\Users\mrabb\Documents\github\cs1632\CS1632_Summer2022\exercises\2\target\jacoco.exec
+   [INFO] Loading execution data file C:\Users\mrabb\Documents\github\cs1632\CS1632_Fall2022\exercises\2\target\jacoco.exec
    [INFO] Analyzed bundle 'rentacat' with 5 classes
    [INFO]
    [INFO] --- jacoco-maven-plugin:0.8.4:check (check-unit-test) @ rentacat ---
-   [INFO] Loading execution data file C:\Users\mrabb\Documents\github\cs1632\CS1632_Summer2022\exercises\2\target\jacoco.exec
+   [INFO] Loading execution data file C:\Users\mrabb\Documents\github\cs1632\CS1632_Fall2022\exercises\2\target\jacoco.exec
    [INFO] Analyzed bundle 'rentacat' with 5 classes
    [WARNING] Rule violated for class edu.pitt.cs.RentACatImpl: instructions covered ratio is 0.02, but expected minimum is 0.20
    [INFO] ------------------------------------------------------------------------
@@ -396,7 +396,7 @@ more complex cases towards the bottom of RentACatTest.java that require Cat
 objects.  For that, you will have to modify setUp() to create some Cat objects
 that emulate the correct behavior.  We learned how to do that in the unit
 testing lectures.  If you are still unsure, look at the
-[LinkedListUnitTest.java](https://github.com/wonsunahn/CS1632_Summer2022/blob/main/sample_code/junit_example/LinkedListUnitTest.java)
+[LinkedListUnitTest.java](https://github.com/wonsunahn/CS1632_Fall2022/blob/main/sample_code/junit_example/LinkedListUnitTest.java)
 sample code.
 
 Some tips you may find useful while writing test cases:
