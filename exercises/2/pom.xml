@@ -33,6 +33,14 @@
   <build>
     <plugins>
       <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.0.0</version>
+        <configuration>
+          <mainClass>edu.pitt.cs.RentACatImpl</mainClass>
+        </configuration>
+      </plugin>
+      <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
         <version>${jacoco-maven-plugin.version}</version>
@@ -69,7 +77,7 @@
                     </limit>
                   </limits>
                   <includes>
-                     <include>edu.pitt.cs.RentACatImpl</include>
+                    <include>edu.pitt.cs.RentACatImpl</include>
                   </includes>
                 </rule>
               </rules>

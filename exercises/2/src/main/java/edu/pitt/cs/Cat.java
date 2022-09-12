@@ -36,6 +36,9 @@ public class Cat {
 	 */
 
 	public Cat(int id, String name) {
+		if (bugInjectionOn) {
+			throw new UnsupportedOperationException("Injected bug for constructor");
+		}
 		rented = false;
 		this.id = id;
 		this.name = name;
