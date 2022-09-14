@@ -1,0 +1,43 @@
+Grading Rubric for D2
+
+* GradeScope autograder: 70% of grade
+
+Autograder score:                    ____ / 70 
+
+This is the score you get from GradeScope source code autograder.
+
+* Tested a private method: 5% of grade
+
+Tested a private method:             ____ / 5
+
+Use Java reflection as we learned during class.
+Review slides and textbook (Chap. 24) to refresh your memory.
+
+* Source code style (name / formatting): 10% of grade
+
+Names are in lower camel case:       ____ / 5
+
+Formatting is uniform:               ____ / 5
+
+* Code coverage: 15% of grade
+
+Coverage screenshot submitted:       ____ / 5
+
+Must show coverage % of CoffeeMakerQuestImpl.
+Must show methods in CoffeeMakerQuestImpl.
+
+Coverage exceeds 90%:                ____ / 10
+
+This number pertains to the CoffeeMakerQuestImpl class only,
+not CoffeeMakerQuestImpl.java including the Item enum.
+
+If 90% <= coverage <= 100%, 10 points
+If 80% <= coverage < 90%, 8 points
+If 70% <= coverage < 80%, 6 points
+If 60% <= coverage < 70%, 4 points
+If 50% <= coverage < 60%, 2 points
+If 0% <= coverage < 50%, 1 points
+
+***
+
+Total:                               ____ / 100
