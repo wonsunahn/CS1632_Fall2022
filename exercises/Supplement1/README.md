@@ -218,8 +218,10 @@ Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.983 sec
 ...
 ```
 
-Congratulations!  If you have time, try to complete the other 4 scenarios in
-rent_a_cat_return_cats.feature and see if you can have them pass too!
+Congratulations!  
+
+Now try to complete the other 4 scenarios in rent_a_cat_return_cats.feature and
+see if you can have them pass too!
 
 # Submission
 
