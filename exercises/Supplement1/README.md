@@ -1,7 +1,6 @@
 - [CS 1632 - Software Quality Assurance](#cs-1632---software-quality-assurance)
   * [Description](#description)
   * [Prerequisites](#prerequisites)
-  * [The Maven Build System](#the-maven-build-system)
   * [Running Cucumber Tests](#running-cucumber-tests)
     + [Running Cucumber Tests on VSCode](#running-cucumber-tests-on-vscode)
     + [Running Cucumber Tests on Commandline](#running-cucumber-tests-on-commandline)
@@ -43,29 +42,6 @@ edit Gherkin files through features like syntax highlighting and autocomplete.
 
 If you haven't already, please install the Apache Maven commandline tool:
 https://maven.apache.org/download.cgi
-
-## The Maven Build System
-
-Maven is a build system that simplifies the job of managing library
-dependencies and ensure a uniform development and testing environment among
-project members.  Package dependencies are specified in the project file
-named pom.xml, which describes the Project Object Model in XML format.  In
-the pom.xml file, you can see dependencies to specific versions of
-"cucumber-java", "cucumber-junit", and "junit".  If you want to know more
-about the POM project file, please refer to:
-
-https://maven.apache.org/guides/introduction/introduction-to-the-pom.html
-
-When the Maven project is built, Maven will automatically download the
-specified dependencies (and transitively the dependencies of those
-dependencies) from the Maven Central repository into a local cache.  That way,
-you don't have to scavenge the internet to look for packages.
-
-Maven projects have a standard layout where project implementation sources are
-stored under src/main and project test sources are stored under src/test.  More
-details can be found at:
-
-https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html
 
 ## Running Cucumber Tests
 
