@@ -323,7 +323,7 @@ Please refer to [Exercise 2](/exercises/2#measuring-code-coverage) on how to
 create the screenshot.  Submit to GradeScope at the **Deliverable 2 Coverage**
 link.  Your screenshot should look like this:
 
-   <img alt="Code Coverage Jacoco" src=code_coverage_jacoco.png width=700>
+   <img alt="Code Coverage Jacoco" src=code_coverage_jacoco.png>
 
    Make sure that the coverage of CoffeeMakerQuestImpl is showing and the
 overall coverage is above **90%** as shown above.
