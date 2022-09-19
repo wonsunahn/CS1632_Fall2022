@@ -20,9 +20,9 @@ public class RentACatBuggy implements RentACat {
 	public boolean returnCat(int id) {
 		// TODO
 		Cat c = getCat(id);
-		if (c != null && !c.getRented()) {
+		if (c != null && c.getRented()) {
 			c.returnCat();
-			return true;
+			return false;
 		}
 		return true;
 	}
@@ -40,9 +40,9 @@ public class RentACatBuggy implements RentACat {
 	public boolean rentCat(int id) {
 		// TODO
 		Cat c = getCat(id);
-		if (c != null && c.getRented()) {
+		if (c != null && !c.getRented()) {
 			c.rentCat();
-			return true;
+			return false;
 		}
 		return true;
 	}
