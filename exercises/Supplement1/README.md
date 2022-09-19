@@ -20,7 +20,7 @@ Fall Semester 2022 - Supplementary Exercise 1
 
 * DUE: September 23 (Friday ), 2022 11:59 PM 
 
-**GitHub Classroom Link:** TBD
+**GitHub Classroom Link:** https://classroom.github.com/a/QD_BdChz
 
 ## Description
 
