@@ -303,16 +303,15 @@ deductions.
 
 # GradeScope Feedback
 
-The feedback you get from the GradeScope autograder is based on the Cucumber
-summary output.  For example, if you get the following output:
+GradeScope grades your submission in two phases:
 
-```
-...
-Tests run: 14, Failures: 9, Errors: 1, Skipped: 0
-...
-```
+1. RentACatImpl Test (score=number passing)
 
-There were 9 failures and 1 errors so the final score is: 14 - 9 - 1 = 4.
+   In this phase, your Cucumber tests are run against RentACatImpl.  All scenarios (14 in total) are expected to pass.
+
+1. RentACatBuggy Test (score=number failing)
+
+   In this phase, your Cucumber tests are run against RentACatBuggy.  All scenarios (14 in total) are expected to fail.
 
 # Groupwork Plan
 
