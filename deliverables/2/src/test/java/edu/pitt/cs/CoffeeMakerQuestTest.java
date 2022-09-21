@@ -113,8 +113,8 @@ public class CoffeeMakerQuestTest {
 	 * <pre>
 	 * Preconditions: Player, rooms, and cmq test fixture been created.
 	 *                rooms.get(2) is modified so that its adjective is modified to "Small".
-	 * Execution steps: Call cmq.areDoorsPlacedCorrectly().
-	 * Postconditions: Return value of cmq.areDoorsPlacedCorrectly() is true.
+	 * Execution steps: Call cmq.areRoomsUnique().
+	 * Postconditions: Return value of cmq.areRoomsUnique() is false.
 	 * </pre>
 	 */
 	@Test
