@@ -55,7 +55,12 @@ AFIST = [_A Friendly Introduction to Software Testing_](software-quality-assuran
 
 * Class 2: NO CLASS (Study for Midterm 1)
   
-* Midterm 1 on GradeScope: TBD
+* Midterm 1 on GradeScope: October 6 (Thursday) 10:00 AM - July 8 (Saturday) 11:59 PM
+  * Check out the **[study guide](/study_guides/midterm_1_study_guide.md)**!
+  * Will be posted as link named "Midterm 1" at Friday 10:00 AM.
+  * You will choose a 3 hour span to complete exam within the above 3-day period.
+  * Your 3 hours begin the moment you click on link and agree to the terms on the next screen.
+  * Open book but individual work.
 
 ## WEEK 7 (Week of 10 OCT)
 
