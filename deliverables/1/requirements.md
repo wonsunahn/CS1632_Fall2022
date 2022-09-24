@@ -39,7 +39,7 @@ FUN-UNKNOWN-COMMAND - If a player enters an unspecified command, the system
 shall respond with the phrase "What?".
 
 FUN-UNIQ-ROOM - Each room in the house shall have a unique adjective describing
-it.
+it, visible to the user upon entering the room.
 
 FUN-UNIQ-ROOM-FURNISHING - Each room in the house shall have one and only one
 unique furnishing visible to the user upon entering the room.
