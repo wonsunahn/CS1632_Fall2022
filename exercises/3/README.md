@@ -81,7 +81,7 @@ in the locator string using it, and then revert back to "store attribute".
 
 FUN-SORT-BY-COMMENTS - "assert text".  Please test this feature by searching
 "catnip" on the search box and then sorting by "Most Comments", and then
-verifying that the first comment has "285 comments" by using "assert text".
+verifying that the first comment has "287 comments" by using "assert text".
 This test is dependent on the current state of the reddit database since
 postings and comments are fluid, but let's assume that the database is given as
 a precondition ;).
