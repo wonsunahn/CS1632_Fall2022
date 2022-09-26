@@ -571,6 +571,12 @@ https://www.w3.org/TR/xpath/
 * Unofficial XPath tutorial:
 https://www.w3schools.com/xml/xpath_intro.asp.
 
+* Official W3C CSS selector specification:
+https://www.w3.org/TR/selectors/
+
+* Unofficial CSS selector tutorial:
+https://www.w3schools.com/cssref/css_selectors.asp
+
 # Extra Credit
 
 DUE: October 17 (Monday), 2022 before start of class
