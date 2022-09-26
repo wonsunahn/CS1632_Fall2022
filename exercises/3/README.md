@@ -565,6 +565,12 @@ https://www.selenium.dev/selenium-ide/docs/en/api/commands
 * Selenium WebDriver Tutorial:
 https://www.selenium.dev/documentation/webdriver/
 
+* Official W3C XPath specification:
+https://www.w3.org/TR/xpath/
+
+* Unofficial XPath tutorial:
+https://www.w3schools.com/xml/xpath_intro.asp.
+
 # Extra Credit
 
 DUE: October 17 (Monday), 2022 before start of class
