@@ -503,7 +503,7 @@ of your tests should pass.
 1. **RedditCatsTest on https://www.reddit.com/r/dogs**: This tests your
    RedditCatsTest.java file on the dogs subreddit, repeating the same steps but
 for a different webpage.  Now some tests should pass but some should fail.
-Specifically, FUN-JOIN-BUTTON-EXISTS and FUN-SEARCH-MEOW should pass and
+Specifically, FUN-JOIN-BUTTON-EXISTS and FUN-RULES-12-ITEMS should pass and
 the rest shold fail.
 
 You may be curious how I was able to run the tests on the GradeScope docker
