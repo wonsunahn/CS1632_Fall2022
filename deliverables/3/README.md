@@ -184,8 +184,29 @@ setUp() method in D3Test.java, depending on whether you are using Chrome of Fire
    ```
    Or whatever the path is to your OS compatible Firefox webdriver.  
 
+1. Please add the @FixMethodOrder annotation before the D3Test class declaration:
 
-You can now run the D3Test JUnit class using Maven:
+   ```
+   @FixMethodOrder(MethodSorters.NAME_ASCENDING)
+   public class D3Test {
+      ...
+   ```
+
+   In order to compile, you would also need the following imports:
+
+   ```
+   import org.junit.FixMethodOrder;
+   import org.junit.runners.MethodSorters;
+   ```
+
+   This is to guarantee a fixed order when running @Test methods when the
+GradeScope autograder runs so that grading results are deterministic and
+reproducible.  Otherwise, @Test methods will run in arbitrary order.  Of
+course, if you initialized your test fixture properly before every test case,
+this should not matter but if you didn't, there is a possibility of
+dependencies forming between test cases.
+
+Now you can now run the D3Test JUnit class using Maven:
 
 ```
 mvn test
