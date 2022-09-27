@@ -69,9 +69,9 @@ on the "Rent" or "Return" buttons.
 Since the behavior of many rent-a-cat features are impacted by these cookies,
 it is important that these cookies are set to certain values before testing.
 So how can we set cookies in Selenium?  Fortunately, Selenium IDE provides a
-way to execute arbitrary JavaScript code using the "execute script" command.
+way to execute arbitrary JavaScript code using the "run script" command.
 In order to set all values of cookies "1", "2", and "3" to false, you need to
-pass the following JavaScript code to the "execute script" command:
+pass the following JavaScript code to the "run script" command:
 
 ```
 document.cookie = "1=false";document.cookie = "2=false";document.cookie = "3=false";
