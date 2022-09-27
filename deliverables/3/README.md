@@ -217,7 +217,7 @@ not the ones that uncover defects of course :).  If there are any failures,
 slightly touch up the D3Test.java Selenium tests to make them pass.  Refer to
 the Exercise 3 troubleshooting guide:
 
-https://github.com/wonsunahn/CS1632_Fall2022/blob/master/exercises/3/README.md#tips-for-junit--selenium-problem-solving
+https://github.com/wonsunahn/CS1632_Fall2022/blob/main/exercises/3/README.md#tips-for-junit--selenium-problem-solving
 
 # Submission
 
