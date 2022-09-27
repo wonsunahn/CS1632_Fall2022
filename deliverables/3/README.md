@@ -206,7 +206,7 @@ course, if you initialized your test fixture properly before every test case,
 this should not matter but if you didn't, there is a possibility of
 dependencies forming between test cases.
 
-Now you can now run the D3Test JUnit class using Maven:
+Now you can run the D3Test JUnit class using Maven:
 
 ```
 mvn test
