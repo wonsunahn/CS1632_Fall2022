@@ -7,7 +7,15 @@ public class Room {
 	private String northDoor;
 	private String southDoor;
 	
-	// Class constructor to populate the class variables
+	/**
+	 * Constructor. The northDoor or the southDoor can be null if there no doors leading north or south.
+	 * 
+	 * @param furnishing Furnishing in the room
+	 * @param adjective Adjective describing the room
+	 * @param item Item present in the room
+	 * @param northDoor Description of north door (null if there is no north door)
+	 * @param southDoor Description of south door (null if there is no south door)
+	 */
 	public Room(String furnishing, String adjective, Item item, String northDoor, String southDoor) {
 		this.furnishing = furnishing;
 		this.adjective = adjective;
