@@ -21,7 +21,7 @@ public class CoffeeMakerQuestImpl implements CoffeeMakerQuest {
 	/**
 	 * Whether the game is over. The game ends when the player drinks the coffee.
 	 * 
-	 * @return true if successful, false otherwise
+	 * @return true if the game is over, false otherwise
 	 */
 	public boolean isGameOver() {
 		// TODO
