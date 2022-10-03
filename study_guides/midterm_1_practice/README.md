@@ -7,7 +7,6 @@
   * [DeathStarTest.java](#deathstartestjava)
     + [Integration Test](#integration-test-1)
     + [Unit Test](#unit-test-1)
-  * [RandomValueTest.java](#randomvaluetestjava)
 - [Cucumber Problems](#cucumber-problems)
   * [Testing Value.java](#testing-valuejava)
     + [value_incVal.feature](#value-incvalfeature)
@@ -62,20 +61,6 @@ described in the comment.
 
 Now we want to unit test DeathStar.shoot again using mocks.  Modify the
 above code to convert it to a unit test.
-
-## RandomValueTest.java
-
-As things stand, test results are unreproducible (test cases will fail
-intermittently).  This is because the RandomValue program is
-nondeterministic due to the internal Random object.  Modify RandomValue.java
-to make the code testable by injecting the Random object, thereby decoupling
-RandomValue from java.util.Random.
-
-Then, modify RandomValueTest.java to create a mock Random object and emulate
-behavior where nextInt(2) always returns 1 such that testIncValOnce and
-testIncValTwice now pass.  Also, add two more test cases
-testIncValOnceNextIntZero and testIncValTwiceNextIntZero which checks that
-value.getVal() always returns 0 if nextInt(2) returns 0.
 
 # Cucumber Problems
 
