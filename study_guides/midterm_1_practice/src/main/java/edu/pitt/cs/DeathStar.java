@@ -1,3 +1,4 @@
+package edu.pitt.cs;
 
 public class DeathStar {
 	public String shoot(Planet planet) {

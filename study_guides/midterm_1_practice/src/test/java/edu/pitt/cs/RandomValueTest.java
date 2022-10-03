@@ -1,15 +1,16 @@
+package edu.pitt.cs;
 
 import static org.junit.Assert.*;
 
 import org.junit.*;
 import org.mockito.*;
 
-public class ValueTest {
-	Value value;
+public class RandomValueTest {
+	RandomValue value;
 
 	@Before
 	public void setUp() {
-		value = new Value();
+		value = new RandomValue();
 	}
 	
 	@Test
@@ -27,6 +28,6 @@ public class ValueTest {
 	public void testIncValTwice() {
 		value.incVal();
 		value.incVal();
-		assertEquals(3, value.getVal());
+		assertEquals(2, value.getVal());
 	}
 }
