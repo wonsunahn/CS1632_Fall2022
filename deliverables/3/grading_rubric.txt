@@ -1,0 +1,22 @@
+Report content (20%):
+
+Summary and testing concerns:                             _____ / 5
+
+Defects reported properly:                                _____ / 15
+  * Expected behavior / observed behavior / repro steps (-5 if not)
+  * General quality. Well-specified, well-written. (-5 if not)
+  * -5 for each defect less than 3 defects
+
+GradeScope autograder (80%):
+
+Selenium tests autograding                                _____ / 80
+  * -5 for each test case failure
+
+-----
+
+Other adjustments:                                        _____
+
+Total:                                                    _____ / 100
+
+
+
