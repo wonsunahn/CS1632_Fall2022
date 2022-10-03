@@ -19,6 +19,7 @@ public class DeathStarTest {
 	@Test
 	public void testShootPlanetIntegration() {
 		// TODO: Fill in!
+		fail();
 	}
 
 	/**
@@ -33,5 +34,6 @@ public class DeathStarTest {
 	@Test
 	public void testShootPlanetUnit() {
 		// TODO: Fill in!
+		fail();
 	}
 }

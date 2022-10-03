@@ -18,6 +18,7 @@ public class SquareTest {
 	@Test
 	public void testSetSquaredIntegration() {
 		// TODO: Fill in!
+		fail();
 	}
 
 	/**
@@ -31,6 +32,7 @@ public class SquareTest {
 	@Test
 	public void testSetSquaredUnit() {
 		// TODO: Fill in!
+		fail();
 	}
 
 }
