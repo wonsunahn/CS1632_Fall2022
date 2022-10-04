@@ -17,7 +17,7 @@ POSTCONDITIONS: The href link of the "Reset" menu item points to `/reset`.
 IDENTIFIER: TEST-2-RESET
 TEST CASE: Given that cats ID 1, 2, and 3 have been rented out,
            check that resetting the system results in all cats being available.
-PRECONDITIONS: The value of cookie "2" is set to "true" (cat ID 2 is rented).
+PRECONDITIONS: The value of cookies "1", "2", and "3" are set to "true" (cat ID 1, 2, 3 are rented).
 EXECUTION STEPS:
 1. Press the "Reset" link.
 POSTCONDITIONS: 
