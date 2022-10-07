@@ -77,8 +77,9 @@ IDENTIFIER: TEST-7-RETURN
 TEST CASE: Check that returning cat ID 2 works as expected.
 PRECONDITIONS: The value of cookie "2" is set to "true" (cat ID 2 is rented).
 EXECUTION STEPS:
-1. Enter "2" into the input box for the returned cat ID.
-2. Press the "Return" button.
+1. Press the "Rent-A-Cat" link.
+2. Enter "2" into the input box for the returned cat ID.
+3. Press the "Return" button.
 POSTCONDITIONS: 
 1. The first item in the cat listing is "ID 1. Jennyanydots".
 1. The second item in the cat listing is "ID 2. Old Deuteronomy".
