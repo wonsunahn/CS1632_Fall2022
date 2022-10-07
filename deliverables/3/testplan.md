@@ -67,9 +67,9 @@ EXECUTION STEPS:
 3. Press the "Rent" button.
 POSTCONDITIONS: 
 1. The first item in the cat listing is "Rented out".
-1. The second item in the cat listing is "ID 2. Old Deuteronomy".
-1. The third item in the cat listing is "ID 3. Mistoffelees".
-2. The text "Success!" appears beside the "Rent" button.
+2. The second item in the cat listing is "ID 2. Old Deuteronomy".
+3. The third item in the cat listing is "ID 3. Mistoffelees".
+4. The text "Success!" appears beside the "Rent" button.
 ```
 
 ```
@@ -82,9 +82,9 @@ EXECUTION STEPS:
 3. Press the "Return" button.
 POSTCONDITIONS: 
 1. The first item in the cat listing is "ID 1. Jennyanydots".
-1. The second item in the cat listing is "ID 2. Old Deuteronomy".
-1. The third item in the cat listing is "ID 3. Mistoffelees".
-2. The text "Success!" appears beside the "Return" button.
+2. The second item in the cat listing is "ID 2. Old Deuteronomy".
+3. The third item in the cat listing is "ID 3. Mistoffelees".
+4. The text "Success!" appears beside the "Return" button.
 ```
 
 ```
