@@ -539,9 +539,6 @@ public void setUp() {
 }
 ```
 
-**Note: Please do not mess with the method declaration "public void setUp() {"
-since it is used for pattern detection in GradeScope to replace the method.**
-
 # Groupwork Plan
 
 I want each member in the group to work on this individually and that is why I
