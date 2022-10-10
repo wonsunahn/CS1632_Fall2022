@@ -25,9 +25,9 @@ Fall Semester 2022 - Exercise 4
 Let's start by downloading the VisualVM Java profiler from:
 https://visualvm.github.io/
 
-Please click on the "Download Standalone" link at the top of the project page.
-Keep the download running as you read the below instructions and install it
-when it is ready.
+Please click on the download link at the top of the project page.  Keep the
+download running as you read the below instructions and install it when it
+is ready.
 
 ## Description
 
