@@ -93,9 +93,9 @@ AFIST = [_A Friendly Introduction to Software Testing_](software-quality-assuran
 
 * Class 2: Discuss Exercise 5 Part 1 / Release Deliverable 5 
 
-## WEEK 11 (Week of 7 NOV)
+* Deliverable 5 due Friday 11:59 PM
 
-* Deliverable 4 due Monday before class
+## WEEK 11 (Week of 7 NOV)
 
 * Class 1: In-class Exercise 5: Static Analysis Part 2
   * Prerequisite: Static Analysis Part 2 Lecture
