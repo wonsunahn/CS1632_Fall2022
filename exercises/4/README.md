@@ -425,14 +425,11 @@ so revealing on your deliverable!
 
 # Groupwork Plan
 
-I expect each group member to try running VisualVM and experience profiling for
-him/herself.  After profiling, compare the four methods that each of you
-decided upon.  Discuss and resolve any differences.
-
-Once you agree upon the four methods, split them into two and have one partner
-refactor two methods each.  Once you are done refactoring, each of you should
-try running VisualVM again to see if you have satisfactory performance.  If
-not, repeat.
+I expect each group member to try running VisualVM and experience profiling
+for him/herself.  I created individual repositories for each of you, so
+optimize your own code afrer profiling.  After both of you are done, compare
+the four methods that each of you optimized.  Discuss, resolve any
+differences, and submit.
 
 # Resources
 
