@@ -59,7 +59,7 @@ POSTCONDITIONS:
 
 ```
 IDENTIFIER: TEST-6-RENT
-TEST CASE: Check that renting cat ID 2 works as expected.
+TEST CASE: Check that renting cat ID 1 works as expected.
 PRECONDITIONS: None.
 EXECUTION STEPS:
 1. Press the "Rent-A-Cat" link.
