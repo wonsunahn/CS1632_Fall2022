@@ -93,7 +93,7 @@ AFIST = [_A Friendly Introduction to Software Testing_](software-quality-assuran
 
 * Class 2: Discuss Exercise 5 Part 1 / Release Deliverable 5 
 
-* Deliverable 5 due Friday 11:59 PM
+* Deliverable 4 due Friday 11:59 PM
 
 ## WEEK 11 (Week of 7 NOV)
 
