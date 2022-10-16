@@ -1,0 +1,127 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>edu.pitt.cs</groupId>
+  <artifactId>integer-string-ops</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jacoco-maven-plugin.version>0.8.4</jacoco-maven-plugin.version>
+    <maven-javadoc-plugin.version>3.0.0</maven-javadoc-plugin.version>
+    <slf4j.version>1.7.36</slf4j.version>
+  </properties>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-all</artifactId>
+      <version>2.0.2-beta</version>
+      <scope>test</scope>
+    </dependency>
+
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.2</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/com.pholser/junit-quickcheck-core -->
+    <dependency>
+      <groupId>com.pholser</groupId>
+      <artifactId>junit-quickcheck-core</artifactId>
+      <version>0.9</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/com.pholser/junit-quickcheck-generators -->
+    <dependency>
+      <groupId>com.pholser</groupId>
+      <artifactId>junit-quickcheck-generators</artifactId>
+      <version>0.9</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest -->
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest</artifactId>
+      <version>2.2</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>${jacoco-maven-plugin.version}</version>
+        <executions>
+          <execution>
+            <id>pre-unit-test</id>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>post-unit-test</id>
+            <phase>test</phase>
+            <goals>
+              <goal>report</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>check-unit-test</id>
+            <phase>test</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <configuration>
+              <dataFile>${project.build.directory}/jacoco.exec</dataFile>
+              <rules>
+                <rule>
+                  <element>CLASS</element>
+                  <limits>
+                    <limit>
+                      <counter>INSTRUCTION</counter>
+                      <value>COVEREDRATIO</value>
+                      <minimum>20%</minimum>
+                    </limit>
+                  </limits>
+                  <includes>
+                    <include>edu.pitt.cs.RentACatImpl</include>
+                  </includes>
+                </rule>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>${maven-javadoc-plugin.version}</version>
+      </plugin>
+    </plugins>
+  </reporting>
+</project>
