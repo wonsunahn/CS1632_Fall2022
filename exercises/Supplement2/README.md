@@ -148,9 +148,9 @@ gain higher coverage without you having to do anything!
 Now it's time to fill in the method.  Fill in the code according to the
 invariant property specified in the Javadoc comment above the method.  Now
 notice that the propery starts with the condition "If x >= 0 and y >= 0".
-You may be tempted to translate this to the Java statement "If (x >= 0 && y
- >= 0)" in your test code, but having an if condition in test code is always
- a code smell.  It is a sign that you have not set up some precondition
+You may be tempted to translate this to the Java statement "If (x >= 0 && y >= 0)"
+in your test code, but having an if condition in test code is always
+a code smell.  It is a sign that you have not set up some precondition
 properly and that is why you are forced to check it during execution.  When
 you write test cases, an "if" should be translated to a "given", or a
 precondition, and the same applies here.  So, in practice, how do we set up
