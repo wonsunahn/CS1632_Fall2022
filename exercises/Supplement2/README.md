@@ -311,9 +311,11 @@ equivalence class.  Otherwise, there is fat chance that you will hit upon a
 properly formatted XML string by dumb luck!
 
 Going back to our testEquals test, fill in the test as before based on the
-Javadoc comments.  Now even after filling in the test the test passes (and
-it will pass no matter how many times you run it unless you are very lucky).
-Does that mean StringOps is bug-free?  Absolutely not!  If you see
+Javadoc comments.  You will have to use an if condition in the test case,
+which is, yes, a code smell (we will talk more about it at the end of this
+section).  After filling in the test, you will notice that the test passes
+(and it will pass no matter how many times you run it unless you are very
+lucky).  Does that mean StringOps is bug-free?  Absolutely not!  If you see
 StringOps.equals(String s1, String s2), you can see the two strings are
 compared only up to Integer.min(s1.length(), s2.length()).  So if one string
 is shorter than the other, but the two strings are identical up to that
@@ -383,6 +385,15 @@ testEquals s1='', s2='ABC'
 testEquals s1='', s2='A'
 testEquals s1='', s2=''
 ```
+
+Now let's go back to the code smell of having to put in an if statement for
+the condition "If lengths of s1 and s2 are different".  Ideally, we would
+like to generate exactly those strings where lengths differ so that we don't
+need that if statement.  Unfortunately, each input value is generated
+independently of other input values so there is no way around this problem
+in the current version of QuickCheck.  So we will have to live with the code
+smell in this case (sigh).
+
 ## Task 4: Debug StringOps equals method
 
 Fix equals() based on the feedback given by QuickCheck.
