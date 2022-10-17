@@ -295,17 +295,20 @@ distribution of random values, in order to get good test coverage.  Your end
 goal should be to get a good number of random values for each equivalence
 class, since each equivalence class would exercise a different part of the
 code.  For numerical input values, you are likely to hit every equivalence
-class, given enough trials.  Or, you can use the **@InRange** annotation to
+class, given enough trials.  Or, you can use the @InRange annotation to
 ensure that random values are generated for a certain range of input values
-for a particular equivalence class.
+for a particular equivalence class, just like we did for testAdd.
 
 For byte streams, equivalence classes cannot be simply described using a
-"range" like numbers.  For byte streams, equivalence classes are things
-like a string with less than 10 characters, a string in all-caps, a string in
-proper XML format, etc.  These cannot be expressed using the @InRange
-annotation.  So we need to create a specialized random value generator for
-each equivalence class.  Otherwise, there is fat chance that you will hit
-upon a properly formatted XML string by dumb luck!
+"range" like numbers.  For byte streams, equivalence classes are things like
+a string with only alpha-decimal characters, a string in all-caps, a string
+in proper XML format, etc.  These cannot be expressed using the @InRange
+annotation (in the current version, there are built-in generators for only
+[date and time
+formats](https://github.com/pholser/junit-quickcheck/tree/master/generators/src/main/java/com/pholser/junit/quickcheck/generator/java/time)).
+So we need to create a specialized random value generator for each
+equivalence class.  Otherwise, there is fat chance that you will hit upon a
+properly formatted XML string by dumb luck!
 
 Going back to our testEquals test, fill in the test as before based on the
 Javadoc comments.  Now even after filling in the test the test passes (and
