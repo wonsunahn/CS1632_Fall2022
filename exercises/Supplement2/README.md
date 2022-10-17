@@ -146,10 +146,58 @@ property-based testing: as you run the tests repeatedly, you will gradually
 gain higher coverage without you having to do anything!
 
 Now it's time to fill in the method.  Fill in the code according to the
-invariant property specified in the Javadoc comment above the method.  If you
-implemented it properly, you should get something similar to the following
-message when you execute runTest.bat again (actual numbers may differ due to
-randomness):
+invariant property specified in the Javadoc comment above the method.  Now
+notice that the propery starts with the condition "If x >= 0 and y >= 0".
+You may be tempted to translate this to the Java statement "If (x >= 0 && y
+ >= 0)" in your test code, but having an if condition in test code is always
+ a code smell.  It is a sign that you have not set up some precondition
+properly and that is why you are forced to check it during execution.  When
+you write test cases, an "if" should be translated to a "given", or a
+precondition, and the same applies here.  So, in practice, how do we set up
+a precondition where the randomized inputs for x and y are always
+non-negative?  There is a QuickCheck annotation @InRange just for this
+purpose:
+
+https://pholser.github.io/junit-quickcheck/site/0.6/junit-quickcheck-generators/apidocs/com/pholser/junit/quickcheck/generator/InRange.html
+
+You can apply it to the testAdd method as follows:
+
+
+```
+@Property(trials = 1000)
+public void testAdd(@InRange(minInt=0) int x, @InRange(minInt=0) int y) {
+	System.out.println("testAdd x='" + x + "', y='" + y + "'");
+	// TODO: Fill in.
+}
+```
+
+Note how now the range of inputs for both x and y are constrained by the
+optional @InRange parameter minInt=0.  Since maxInt was not set, it remains
+the default max value for the int type, or 2147483647.  Now let us see if
+the @InRange annotation worked by uncommenting the System.out.println (like
+the above), and running with "mvn test".  Alternatively, you can use the
+Test Runner on VSCode and observe the Debug Console, as we have done
+previously.  You should see an output like the following (actual output will
+be different due to randomization):
+
+```
+testAdd x='1098785760', y='551354124'
+testAdd x='2035206222', y='770643761'
+testAdd x='584146133', y='314312594'
+testAdd x='1457251401', y='1432802048'
+testAdd x='1417594951', y='1723633588'
+testAdd x='198251591', y='160066726'
+testAdd x='1712751175', y='883772460'
+testAdd x='745939080', y='1122577425'
+testAdd x='1117167476', y='2107858960'
+...
+```
+
+If you observe that all values for x and y should be non-negative, now you
+are finally ready to fill in the // TODO with an assertion for that
+property.  If you wrote the assertion properly, you should get something
+similar to the following message when you run the test again (actual numbers
+may differ due to randomization):
 
 ```
 testAdd(IntegerOpsTest): Property named 'testAdd' failed:
@@ -175,16 +223,7 @@ If you left the System.out.println un-commented, you can see what's happening
 behind the scenes by observing the output:
 
 ```
-testAdd x='-1967126952', y='1194075525'
-testAdd x='1191001002', y='529527415'
-testAdd x='-427676937', y='1415513158'
-testAdd x='898946678', y='-810210174'
-testAdd x='-2096855516', y='147305889'
-testAdd x='-1427326142', y='201626672'
-testAdd x='927999071', y='-507009504'
-testAdd x='-1575502058', y='-1850940687'
-testAdd x='-82004065', y='-1320953857'
-testAdd x='275074581', y='-1498381415'
+...
 testAdd x='1936803025', y='1056406418'  <--- First discovery of defect, starting shrinking ...
 testAdd x='0', y='1056406418'
 testAdd x='968401512', y='1056406418'
@@ -221,6 +260,9 @@ These are the three things you should have learned through this exercise:
 
 1. A @Property QuickCheck test goes through many randomized trials during a
    single test run where each trial is provided with randomized input values.
+
+1. The randomized input values can be constrained using the @InRange
+   annotation to adhere to some condition.
 
 1. A property check must be an invariant assertion that is true no matter what
    randomized input values are tested.  For example, things like: the addition
