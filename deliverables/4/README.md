@@ -122,33 +122,18 @@ measurably increase the speed of the application without modifying behavior.
 Refer to Exercise 4 for a detailed explanation of how to use VisualVM to
 profile an application.
 
-There are two things you have to do differently form Exercise 4, however:
-
-1. You need to replace "GameOfLife" with "*" (wild card) in the "Profile
-   classes:" window on the right before pressing on the "CPU" button to start
-profiling.  This instructs VisualVM to instrument not only the GameOfLife class
-(the class with the main method), but all classes in the application.  You did
-not need to do this for the Exercise 4 MonkeySim application because it was
-single-threaded application.  All code in a single-threaded application execute
-starting from the main method, so the default behavior of VisualVM to
-instrument starting from the main method class was just fine.  GameOfLife is a
-GUI application and in a Java GUI application, there are multiple event handler
-threads running in the background to handle events like button presses
-concurrently with the application.  In this case, the code for these threads do
-not start from the main method.
-
-1. You need to collect profiles for each individual feature.  For Exercise 4,
-   the only feature was to run MonkeySim from the commandline.  In this
+You need to collect profiles for each individual feature.  For Exercise 4,
+the only feature was to run MonkeySim from the commandline.  In this
 application, there are 6 different features you need to test.  If you take a
-snapshot of the profile at the very end of execution after having tried out all
-6 features, just like you did for the exercise, you will not be able to tell
-which feature has a performance problem.  Instead, create 6 individual
+snapshot of the profile at the very end of execution after having tried out
+all 6 features, just like you did for the exercise, you will not be able to
+tell which feature has a performance problem.  Instead, create 6 individual
 snapshots for the 6 features and analyze them separately.  Once you are done
-profiling a feature, press the "Reset" button on VisualVM to clear the profile
-before moving on to the next feature.  You should be able to find the 2
-problematic features relatively easily (the slow methods have pretty glaring
-performance problems).  Save the hot spots list for each of the two features in
-these two files: **hotspots-feature1-before.png** and
+profiling a feature, press the "Reset" button on VisualVM to clear the
+profile before moving on to the next feature.  You should be able to find
+the 2 problematic features relatively easily (the slow methods have pretty
+glaring performance problems).  Save the hot spots list for each of the two
+features in these two files: **hotspots-feature1-before.png** and
 **hotspots-feature2-before.png**.
 
 ### Task 2: Write Pinning Tests for the Three Methods
