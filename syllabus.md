@@ -177,8 +177,9 @@ The format of the write-up will be specified on each assignment.  To
 collaborate on these write-ups, it may be easier to use cloud shared docs (such
 as Goodle Docs).
 
-Late assignments will receive a -5 percentage point penalty per day (e.g., if
-you would have received a 90% on an assignment, but you turned it in 3 days
+All exercises are expected to be submitted on time, for the purposes of timely feedback.
+Late deliverables will receive a -5 percentage point penalty per day (e.g., if
+you would have received a 90% on a deliverable, but you turned it in 3 days
 late, you would receive 90 - 15 = 75%.).  
 
 ## Programming Language Selection
