@@ -299,7 +299,7 @@ deterministically, at least while debugging:
    setarch x86_64 -R ./stack_overflow.bin
    [Sent data]
    48 65 6c 6c 6f 2e 2e  0 e0 e5 ff ff ff 7f  0  0 57 6f 72 6c 64 2e 2e  0 f0 e5 ff ff ff 7f  0  0
-  ```
+   ```
 
    Note that the memory error still exists, but the program is going to be
 easier to debug since at least you can reproduce the same behavior every
