@@ -6,5 +6,5 @@ if [ -z "$1" ]
     exit
 fi
 
-echo "setarch `uname -m` -R $1 $2"
-setarch `uname -m` -R $1 $2
+echo "setarch `uname -m` -R $1 $2 $3"
+setarch `uname -m` -R $1 $2 $3
