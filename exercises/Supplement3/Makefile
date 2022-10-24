@@ -1,7 +1,7 @@
 TARGETS = heap.bin stack.bin stack_overflow.bin stack_pointer_return.bin heap_overflow.bin binary_tree.bin datarace.bin
 OBJS = heap.o stack.o stack_overflow.o o stack_pointer_return.o heap_overflow.o binary_tree.o datarace.o
 ASANTARGETS = stack_overflow.asan stack_pointer_return.asan heap_overflow.asan binary_tree.asan
-ASANOBJS = stack_overflow.asan.o stack_pointer_return.asan.o binary_tree.asan.o
+ASANOBJS = stack_overflow.asan.o stack_pointer_return.asan.o heap_overflow.asan.o binary_tree.asan.o
 TSANTARGETS = datarace.tsan
 TSANOBJS = datarace.tsan.o
 
