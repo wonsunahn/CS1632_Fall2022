@@ -98,6 +98,8 @@ gcc -c -g -w stack_overflow.c -o stack_overflow.o
 gcc stack_overflow.o -lm -o stack_overflow.bin
 gcc -c -g -w stack_pointer_return.c -o stack_pointer_return.o
 gcc stack_pointer_return.o -lm -o stack_pointer_return.bin
+gcc -c -g -w heap_overflow.c -o heap_overflow.o
+gcc heap_overflow.o -lm -o heap_overflow.bin
 gcc -c -g -w binary_tree.c -o binary_tree.o
 gcc binary_tree.o -lm -o binary_tree.bin
 gcc -c -g -w -pthread datarace.c -o datarace.o
@@ -106,6 +108,8 @@ gcc -c -g -w -fsanitize=address stack_overflow.c -o stack_overflow.asan.o
 gcc stack_overflow.asan.o -lm -fsanitize=address -o stack_overflow.asan
 gcc -c -g -w -fsanitize=address stack_pointer_return.c -o stack_pointer_return.asan.o
 gcc stack_pointer_return.asan.o -lm -fsanitize=address -o stack_pointer_return.asan
+gcc -c -g -w -fsanitize=address heap_overflow.c -o heap_overflow.asan.o
+gcc heap_overflow.asan.o -lm -fsanitize=address -o heap_overflow.asan
 gcc -c -g -w -fsanitize=address binary_tree.c -o binary_tree.asan.o
 gcc binary_tree.asan.o -lm -fsanitize=address -o binary_tree.asan
 gcc -c -g -w -fPIE -fsanitize=thread -pthread datarace.c -o datarace.tsan.o
@@ -397,6 +401,94 @@ ASAN can help us this time as well:
    Again, stack_pointer_return.c:8 is flagged as an illegal read because it
 is attempting to read a location that has already been deallocated.  
 
+1. heap_overflow,c has a memory error on the heap.  It displays
+   nondeterministic behavior due to this error, just like before:
+
+   ```
+   $ ./heap_overflow.bin 10 helloworld
+   Failure: name=helloworld, tree->name=hellowor@r}kU
+   Name check result = 0
+   $ ./heap_overflow.bin 10 helloworld
+   Failure: name=helloworld, tree->name=hellowor@[rU
+   Name check result = 0
+   $ ./heap_overflow.bin 10 helloworld
+   Failure: name=helloworld, tree->name=hellowor@TU
+   Name check result = 0
+   ```
+
+   Note the random string for tree-\>name.  Again we can temporarily disable
+ASLR to obtain deterministic behavior:
+
+   ```
+   $ bash run_aslr_off.sh ./heap_overflow.bin 10 helloworld
+   setarch x86_64 -R ./heap_overflow.bin 10 helloworld
+   Failure: name=helloworld, tree->name=hellowor@WUUU
+   Name check result = 0
+   $ bash run_aslr_off.sh ./heap_overflow.bin 10 helloworld
+   setarch x86_64 -R ./heap_overflow.bin 10 helloworld
+   Failure: name=helloworld, tree->name=hellowor@WUUU
+   Name check result = 0
+   $ bash run_aslr_off.sh ./heap_overflow.bin 10 helloworld
+   setarch x86_64 -R ./heap_overflow.bin 10 helloworld
+   Failure: name=helloworld, tree->name=hellowor@WUUU
+   Name check result = 0
+   ```
+
+   But again, to fundamentally solve the issue, we need to get rid of the
+memory error to begin with.  Let's use ASAN for the purpose.
+
+   ```
+   $ ./heap_overflow.asan 10 helloworld
+   Failure: name=helloworld, tree->name=helloworp
+   Name check result = 0
+   ```
+
+   Wait, why didn't ASAN detect the error?  Hmmm.  Let's try a longer string
+this time:
+
+   ```
+   $ ./heap_overflow.asan 10 Astringlongerthan24bytes
+   =================================================================
+   ==3996490==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x603000000028 at pc 0x7fb60e2a216d bp 0x7ffc25db0540 sp 0x7ffc25dafce8
+   WRITE of size 25 at 0x603000000028 thread T0
+       #0 0x7fb60e2a216c in __interceptor_strcpy ../../../../src/libsanitizer/asan/asan_interceptors.cc:431
+       #1 0x55918f9852e1 in NewTreeNode /afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/heap_overflow.c:32
+       #2 0x55918f9854e4 in BottomUpTree /afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/heap_overflow.c:67
+   ...
+   0x603000000028 is located 0 bytes to the right of 24-byte region [0x603000000010,0x603000000028)
+   allocated by thread T0 here:
+       #0 0x7fb60e313808 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cc:144
+       #1 0x55918f9852ca in NewTreeNode /afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/heap_overflow.c:30
+       #2 0x55918f9854e4 in BottomUpTree /afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/heap_overflow.c:67
+   ...
+   ```
+
+   Success!  There was a write of 25 bytes to location 0x603000000028 at
+heap_overflow.c:32.  And that location 0x603000000028 was allocated as a
+24-byte region at heap_overflow.c:30.  That 24-byte region would be the
+treeNode struct that was allocated at that line.  The treeNode is 24 bytes
+because it consists of two pointers, 8 bytes each, and a char array of 4
+bytes which is padded to 8 bytes for alignment.
+
+   That shines a light into the mystery of why the original string
+"helloworld" did not trigger detection by ASAN.  ASAN maintains a "shadow
+memory" of allocated memory regions and the string needed to be long enough
+to overflow the region for detection to happen.  This is a limitation in
+ASAN.  There is obviously an error even with the shorter "helloworld"
+string --- it is just that ASAN was not able to detect it --- a false
+negative.  But if you think about it, you can understand why it is so hard
+for ASAN to detect an illegal offset access within an allocation region.
+Even when the strcpy write overflows from new-\>name into new-\>left, that
+is technically a legal access in the C programming language.  The access
+still happens within the bounds of allocated memory, so according to C
+specifications, the behavior is well-defined and it is technically not a
+memory error!  
+
+   Once you understand this aspect of ASAN, you will understand that sometimes
+you need to longer strings to turn overflows into true memory errors and
+allow detection.
+
+
 ### Debugging
 
 Modify stack_overflow.c, stack_pointer_return.c, and heap_overflow.c so that
@@ -437,6 +529,11 @@ $ ./stack_pointer_return.asan
  1  2  3  4  5  6  7  8 
 ```
 
+```
+$ ./heap_overflow.asan 10 Astringlongerthan24bytes
+Name check result = 1
+```
+
 Since there are no memory errors, the ASAN instrumentation should not output
 any errors.
 
@@ -448,6 +545,8 @@ If you are stuck debugging the programs, here are some hints:
    location.  One way to fix it is to declare the array to be a static local
 variable so that it gets moved from the stack to static memory which has
 persistent duration.  
+1. heap_overflow.c currently has a statically sized char array for name.  To
+   allow arbitrarily long names, consider using strdup instead of strcpy.
 
 ### Comparing Google ASAN with Valgrind
 
