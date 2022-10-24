@@ -224,129 +224,131 @@ p = 0x7fffffffe580
 
 ### Using Google ASAN (Address Sanitizer)
 
-stack_overflow.c is a buggy program that demonstrates the stack buffer overflow
+1. stack_overflow.c is a buggy program that demonstrates the stack buffer overflow
 issue that we discussed in the lecture.  In the main function, it starts by
 creating a linked list of 3 nodes on the stack.  Then, it sends 32 bytes of
 first.data to the screen:
 
-```
-send_data(first.data, 32);
-```
+  ```
+  send_data(first.data, 32);
+  ```
 
-First, let's try executing the program a few times as before:
+  First, let's try executing the program a few times as before:
 
-```
-$ ./stack_overflow.bin
-[Sent data]
-48 65 6c 6c 6f 2e 2e  0 c0 60 fb 80 fe 7f  0  0 57 6f 72 6c 64 2e 2e  0 d0 60 fb 80 fe 7f  0  0
-$ ./stack_overflow.bin
-[Sent data]
-48 65 6c 6c 6f 2e 2e  0 f0 4f 4c bf ff 7f  0  0 57 6f 72 6c 64 2e 2e  0  0 50 4c bf ff 7f  0  0
-$ ./stack_overflow.bin
-[Sent data]
-48 65 6c 6c 6f 2e 2e  0 e0 87 7e  f fc 7f  0  0 57 6f 72 6c 64 2e 2e  0 f0 87 7e  f fc 7f  0  0
-```
+  ```
+  $ ./stack_overflow.bin
+  [Sent data]
+  48 65 6c 6c 6f 2e 2e  0 c0 60 fb 80 fe 7f  0  0 57 6f 72 6c 64 2e 2e  0 d0 60 fb 80 fe 7f  0  0
+  $ ./stack_overflow.bin
+  [Sent data]
+  48 65 6c 6c 6f 2e 2e  0 f0 4f 4c bf ff 7f  0  0 57 6f 72 6c 64 2e 2e  0  0 50 4c bf ff 7f  0  0
+  $ ./stack_overflow.bin
+  [Sent data]
+  48 65 6c 6c 6f 2e 2e  0 e0 87 7e  f fc 7f  0  0 57 6f 72 6c 64 2e 2e  0 f0 87 7e  f fc 7f  0  0
+  ```
 
-You can see that this is also a nondeterministic program.  But we only sent
-data to the output and no addresses this time, so where did the nondeterminism
-come from?  If you look more closely, you will notice that the first 8 bytes do
-not change from run to run.  If you know ASCII code, you will be able to
-decypher it to he the "Hello.." string (with nul terminator) inside first.data.
-Then, what are the second 8 bytes that keep on changing?  For that, let's try
-running stack_overflow in verbose mode using the "-v" option:
+  You can see that this is also a nondeterministic program.  But we only
+sent data to the output and no addresses this time, so where did the
+nondeterminism come from?  If you look more closely, you will notice that
+the first 8 bytes do not change from run to run.  If you know ASCII code,
+you will be able to decypher it to he the "Hello.." string (with nul
+terminator) inside first.data.  Then, what are the second 8 bytes that keep
+on changing?  For that, let's try running stack_overflow in verbose mode
+using the "-v" option:
 
-```
-$ ./stack_overflow.bin -v
-[Stack Frame]
-return address = 0x7f2cf873d0b3
-old base pointer = (nil) <--- base pointer
-padding (8 bytes)
-padding (8 bytes)
-third.next = (nil)
-third.data = .......
-second.next = 0x7fffeca47e60 <--- Sent!
-second.data = World.. <--- Sent!
-first.next = 0x7fffeca47e50 <--- Sent!
-first.data = Hello.. <--- Sent!
-[Sent data]
-48 65 6c 6c 6f 2e 2e  0 50 7e a4 ec ff 7f  0  0 57 6f 72 6c 64 2e 2e  0 60 7e a4 ec ff 7f  0  0
-```
+  ```
+  $ ./stack_overflow.bin -v
+  [Stack Frame]
+  return address = 0x7f2cf873d0b3
+  old base pointer = (nil) <--- base pointer
+  padding (8 bytes)
+  padding (8 bytes)
+  third.next = (nil)
+  third.data = .......
+  second.next = 0x7fffeca47e60 <--- Sent!
+  second.data = World.. <--- Sent!
+  first.next = 0x7fffeca47e50 <--- Sent!
+  first.data = Hello.. <--- Sent!
+  [Sent data]
+  48 65 6c 6c 6f 2e 2e  0 50 7e a4 ec ff 7f  0  0 57 6f 72 6c 64 2e 2e  0 60 7e a4 ec ff 7f  0  0
+  ```
 
-You will notice that the second 8 bytes is the pointer address inside
+  You will notice that the second 8 bytes is the pointer address inside
 first.next (in reverse, since x86 architecture uses little endian ordering)!
 So why is first.next being sent along with first.data?  That is because the
 first.data buffer is only 8 bytes long, so when send_data attempts to send
 32 bytes, it also sends the 8 bytes that come after first.data, which in the
 stack layout happens to be first.next.
 
-In short, the address inside first.next **leaks out** to program output even
-though the programmer never intended it in the source code.  And this address
-randomized by ASLR is what is causing the nondeterminism.  Of course, you could
-again turn off ASLR to make the buggy program run deterministically, at least
-while debugging:
+  In short, the address inside first.next **leaks out** to program output
+even though the programmer never intended it in the source code.  And this
+address randomized by ASLR is what is causing the nondeterminism.  Of
+course, you could again turn off ASLR to make the buggy program run
+deterministically, at least while debugging:
 
-```
-$ bash run_aslr_off.sh ./stack_overflow.bin
-setarch x86_64 -R ./stack_overflow.bin
-[Sent data]
-48 65 6c 6c 6f 2e 2e  0 e0 e5 ff ff ff 7f  0  0 57 6f 72 6c 64 2e 2e  0 f0 e5 ff ff ff 7f  0  0
-$ bash run_aslr_off.sh ./stack_overflow.bin
-setarch x86_64 -R ./stack_overflow.bin
-[Sent data]
-48 65 6c 6c 6f 2e 2e  0 e0 e5 ff ff ff 7f  0  0 57 6f 72 6c 64 2e 2e  0 f0 e5 ff ff ff 7f  0  0
-$ bash run_aslr_off.sh ./stack_overflow.bin
-setarch x86_64 -R ./stack_overflow.bin
-[Sent data]
-48 65 6c 6c 6f 2e 2e  0 e0 e5 ff ff ff 7f  0  0 57 6f 72 6c 64 2e 2e  0 f0 e5 ff ff ff 7f  0  0
-```
+  ```
+  $ bash run_aslr_off.sh ./stack_overflow.bin
+  setarch x86_64 -R ./stack_overflow.bin
+  [Sent data]
+  48 65 6c 6c 6f 2e 2e  0 e0 e5 ff ff ff 7f  0  0 57 6f 72 6c 64 2e 2e  0 f0 e5 ff ff ff 7f  0  0
+  $ bash run_aslr_off.sh ./stack_overflow.bin
+  setarch x86_64 -R ./stack_overflow.bin
+  [Sent data]
+  48 65 6c 6c 6f 2e 2e  0 e0 e5 ff ff ff 7f  0  0 57 6f 72 6c 64 2e 2e  0 f0 e5 ff ff ff 7f  0  0
+  $ bash run_aslr_off.sh ./stack_overflow.bin
+  setarch x86_64 -R ./stack_overflow.bin
+  [Sent data]
+  48 65 6c 6c 6f 2e 2e  0 e0 e5 ff ff ff 7f  0  0 57 6f 72 6c 64 2e 2e  0 f0 e5 ff ff ff 7f  0  0
+  ```
 
-Note that the memory error still exists, but the program is going to be
+  Note that the memory error still exists, but the program is going to be
 easier to debug since at least you can reproduce the same behavior every
 time you run the program.
 
-But when the time comes to deploy your program, your end users will most
+  But when the time comes to deploy your program, your end users will most
 likely have ASLR turned on in their machines for security.  What then?  Your
 programs will again be nondeterministic, and even if the program ran
 correctly when debugging with ASLR turned off, there is no guarantee that
 the correct behavior will be reproduced with ASLR turned back on.  So we may
 still get surprise defects.
 
-How can we have a deterministic program when all addresses are randomized?
+  How can we have a deterministic program when all addresses are randomized?
 Easy: just don't let addresses leak out to program output!  As we discussed,
-unless for debugging purposes, programs will almost never intentionally output
-addresses where data is stored --- they will typically output the data.  It is
-just that addresses leak out to output due to memory errors (like in this
-case).  So if we can catch all memory errors, then problem solved!  ASAN is
-exactly the kind of tool that can help you do that.
+unless for debugging purposes, programs will almost never intentionally
+output addresses where data is stored --- they will typically output the
+data.  It is just that addresses leak out to output due to memory errors
+(like in this case).  So if we can catch all memory errors, then problem
+solved!  ASAN is exactly the kind of tool that can help you do that.
 
-Now let's see if ASAN can find the bug for us by running the instrumented binary:
+  Now let's see if ASAN can find the bug for us by running the instrumented binary:
 
-```
-$ ./stack_overflow.asan
-[Sent data]
-=================================================================
-==3982981==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x7ffc5e8d3330 at pc 0x56480b55c353 bp 0x7ffc5e8d32b0 sp 0x7ffc5e8d32a0
-READ of size 1 at 0x7ffc5e8d3330 thread T0
-    #0 0x56480b55c352 in send_data /afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/stack_overflow.c:17
-    #1 0x56480b55c8a3 in main /afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/stack_overflow.c:49
-    #2 0x7f429c3fb0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x240b2)
-    #3 0x56480b55c22d in _start (/afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/stack_overflow.asan+0x222d)
+  ```
+  $ ./stack_overflow.asan
+  [Sent data]
+  =================================================================
+  ==3982981==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x7ffc5e8d3330 at pc 0x56480b55c353 bp 0x7ffc5e8d32b0 sp 0x7ffc5e8d32a0
+  READ of size 1 at 0x7ffc5e8d3330 thread T0
+      #0 0x56480b55c352 in send_data /afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/stack_overflow.c:17
+      #1 0x56480b55c8a3 in main /afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/stack_overflow.c:49
+      #2 0x7f429c3fb0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x240b2)
+      #3 0x56480b55c22d in _start (/afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/stack_overflow.asan+0x222d)
 
-Address 0x7ffc5e8d3330 is located in stack of thread T0 at offset 48 in frame
-    #0 0x56480b55c394 in main /afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/stack_overflow.c:22
+  Address 0x7ffc5e8d3330 is located in stack of thread T0 at offset 48 in frame
+      #0 0x56480b55c394 in main /afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/stack_overflow.c:22
 
-  This frame has 3 object(s):
-    [32, 48) 'first' (line 23) <== Memory access at offset 48 overflows this variable
-    [64, 80) 'second' (line 23)
-    [96, 112) 'third' (line 23)
-...
-```
+    This frame has 3 object(s):
+      [32, 48) 'first' (line 23) <== Memory access at offset 48 overflows this variable
+      [64, 80) 'second' (line 23)
+      [96, 112) 'third' (line 23)
+  ...
+  ```
 
-ASAN is able to pinpoint exactly where the illegal "READ of size 1" happened at
-stack_overflow.c:17!  That is where the out of bounds array access happens.
-Below that line is the stack trace so we know the calling context.
+  ASAN is able to pinpoint exactly where the illegal "READ of size 1"
+happened at stack_overflow.c:17!  That is where the out of bounds array
+access happens.  Below that line is the stack trace so we know the calling
+context.
 
-stack_pointer_return.c is another buggy program with a common memory error
+1. stack_pointer_return.c is another buggy program with a common memory error
 where a function returns a pointer to a local array.  When the function
 returns, the local array is deallocated with the rest of the function frame
 as it is now out of scope, thereby leaving the pointer dangling.  Similar to
@@ -358,53 +360,56 @@ bar() rather than leaving it dangling (which is a good choice).  So, you get
 deterministic behavior in this case --- it's just that accessing a null
 pointer results in a segmentation fault:
 
-```
-$ ./stack_pointer_return.bin
-Segmentation fault (core dumped)
-```
 
-Old versions of GCC and some other compilers would just leave the pointer
+  ```
+  $ ./stack_pointer_return.bin
+  Segmentation fault (core dumped)
+  ```
+
+  Old versions of GCC and some other compilers would just leave the pointer
 dangling which would cause an access of a dangling pointer.  So what happens
 then?  Well, the pointer is dangling because the memory that it used to
 point to is deallocated.  That piece of memory eventually gets reallocated
 to hold other values (in this case, when a new stack frame is allocated).
 If that value is an address, you would get nondeterministic behavior.
 
-In any case, it is a memory error that needs to be fixed!  So let's see if
+  In any case, it is a memory error that needs to be fixed!  So let's see if
 ASAN can help us this time as well:
 
-```
-$ ./stack_pointer_return.asan
-[Sent data]
-AddressSanitizer:DEADLYSIGNAL
-=================================================================
-==3983404==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x55be4fe0f2f3 bp 0x7ffff2292920 sp 0x7ffff2292900 T0)
-==3983404==The signal is caused by a READ memory access.
-==3983404==Hint: address points to the zero page.
-    #0 0x55be4fe0f2f2 in send_data /afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/stack_pointer_return.c:8
-    #1 0x55be4fe0f454 in main /afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/stack_pointer_return.c:23
-    #2 0x7f6edbe040b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x240b2)
-    #3 0x55be4fe0f1cd in _start (/afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/stack_pointer_return.asan+0x11cd)
+  ```
+  $ ./stack_pointer_return.asan
+  [Sent data]
+  AddressSanitizer:DEADLYSIGNAL
+  =================================================================
+  ==3983404==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x55be4fe0f2f3 bp 0x7ffff2292920 sp 0x7ffff2292900 T0)
+  ==3983404==The signal is caused by a READ memory access.
+  ==3983404==Hint: address points to the zero page.
+      #0 0x55be4fe0f2f2 in send_data /afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/stack_pointer_return.c:8
+      #1 0x55be4fe0f454 in main /afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/stack_pointer_return.c:23
+      #2 0x7f6edbe040b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x240b2)
+      #3 0x55be4fe0f1cd in _start (/afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/stack_pointer_return.asan+0x11cd)
 
-AddressSanitizer can not provide additional info.
-SUMMARY: AddressSanitizer: SEGV /afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/stack_pointer_return.c:8 in send_data
-==3983404==ABORTING
-```
+  AddressSanitizer can not provide additional info.
+  SUMMARY: AddressSanitizer: SEGV /afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/stack_pointer_return.c:8 in send_data
+  ==3983404==ABORTING
+  ```
 
-Again, stack_pointer_return.c:8 is flagged as an illegal read because it is
-attempting to read a location that has already been deallocated.  
+  Again, stack_pointer_return.c:8 is flagged as an illegal read because it
+is attempting to read a location that has already been deallocated.  
 
 ### Debugging
 
-Modify stack_overflow.c and stack_pointer_return.c so that they no longer
-contain memory errors.  You can use 'nano', a very simple editor:
+Modify stack_overflow.c, stack_pointer_return.c, and heap_overflow.c so that
+they no longer contain memory errors.  You can use 'nano', a very simple
+editor:
 
 ```
 $ nano stack_overflow.c
 ```
 
-Or you can use your favorite Linux editor (mine is Vim), or feel free to
-edit the files on your favorite IDE on your laptop and upload to thoth.
+Or you can use your favorite Linux editor (mine is Vim).  Or edit the files
+on VSCode on your laptop and git push to the repository, after which you can
+git pull from thoth.
 
 Once you are done, invoke 'make' again to recompile the binaries:
 
