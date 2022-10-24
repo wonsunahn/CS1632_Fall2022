@@ -19,7 +19,7 @@ Fall Semester 2022 - Supplementary Exercise 3
 
 DUE: October 28 (Friday), 2022 11:59 PM
 
-**GitHub Classroom Link:** TBD
+**GitHub Classroom Link:** https://classroom.github.com/a/TbyJNuTA
 
 ## Description
 
@@ -48,19 +48,15 @@ In order to use ASAN or TSAN, you need to clang version >= 3.1 or gcc version >=
 computer, I will ask you to connect using SSH to one of the departmental public
 Linux servers at thoth.cs.pitt.edu.
 
-If you use Windows, please follow these steps:
+Please follow these steps:
 
-1. Every OS comes with an SSH commandline client nowadays.  Open a commandline shell (e.g. cmd, terminal) then type:
+1. Every OS (Windows, MacOS, Linux) comes with an SSH commandline client.  Open a commandline shell (e.g. cmd, terminal) then type:
    ```
    $ ssh USERNAME@thoth.cs.pitt.edu
    ```
    Where USERNAME is replaced with your own Pitt ID.
 
-   If you would like a GUI SSH client, Putty is a free open source SSH terminal:
-   https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
-   Connect to "thoth.cs.pitt.edu" by typing that in the "Host Name" box.  Make sure that port is 22 and SSH is selected in the radio button options.
-
-1. Once connected, the host will ask for your Pitt credentials.  Enter your Pitt ID and password.
+1. Once connected, the host will ask for your Pitt credentials.  Enter your Pitt password.
 
 Once logged in, you may see an unsettling welcome message showing system
 diagnostics.  Don't panic, the machine is just going through some system
@@ -68,15 +64,10 @@ updates and admins haven't yet settled on a nice welcome message. :)
 
 ## Building
 
-Once logged in, you will also notice that your home directories are empty,
-which may be unsettling for those of you who used thoth before and had files
-there.  That is because the admins have not yet connected your thoth accounts
-to your departmental AFS (Andrew File System) home directories.  For now, your
-home directories are located in the local hard disk.  These home directories
-will be razed once the semester is over.
-
-Create and go to a directory of your choice (or you can stay at your default
-home directory) and then clone your GitHub Classroom repository:
+Once logged in, you will be in your home directory under
+/afs/pitt.edu/home/.  Create and cd into a directory of your choice (or you
+can stay at your home directory) and then clone your GitHub Classroom
+repository:
 
 ```
 $ git clone <your GitHub Classroom repository HTTPS URL>
@@ -87,7 +78,12 @@ account username, but Password is not your password.  Password
 authentication on GitHub has been deprecated on August 2021, so now you have
 to use something called a Personal Authenication Token (PAT) in place of the
 password.  Here are instructions on how to create a PAT:
+
 https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token
+
+Creating a classic PAT is slightly simpler, if you don't need fine-grained
+access control to individual repositories.  Use the PAT to authenticate in
+place of your password when cloning.
 
 Now cd into your cloned directory.  I have provided a Makefile build script
 to automate the build.  All you have to do is invoke 'make':
@@ -204,17 +200,37 @@ Did you ever get the feeling that your C program that used to behave randomly
 suddenly becomes deterministic when you run it on top of GDB (GNU Debugger)?
 That is because GDB by default turns off ASLR for debugging purposes so that
 behavior is reproducible.  Turning off ASLR can be very useful in a debug
-setting.
+setting.  Let's confirm with our own eyes that GDB does in fact turn off
+ASLR by running it three times:
+
+```
+$ gdb stack.bin
+...
+Reading symbols from stack.bin...
+(gdb) run
+Starting program: /afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/stack.bin
+p = 0x7fffffffe580
+[Inferior 1 (process 3981010) exited normally]
+(gdb) run
+Starting program: /afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/stack.bin
+p = 0x7fffffffe580
+[Inferior 1 (process 3981014) exited normally]
+(gdb) run
+Starting program: /afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/stack.bin
+p = 0x7fffffffe580
+[Inferior 1 (process 3981202) exited normally]
+(gdb)
+```
 
 ### Using Google ASAN (Address Sanitizer)
 
 stack_overflow.c is a buggy program that demonstrates the stack buffer overflow
 issue that we discussed in the lecture.  In the main function, it starts by
-creating a linked list of 3 nodes on the stack.  Then, it sends 16 bytes of
+creating a linked list of 3 nodes on the stack.  Then, it sends 32 bytes of
 first.data to the screen:
 
 ```
-send_data(first.data, 16);
+send_data(first.data, 32);
 ```
 
 First, let's try executing the program a few times as before:
@@ -222,13 +238,13 @@ First, let's try executing the program a few times as before:
 ```
 $ ./stack_overflow.bin
 [Sent data]
-48 65 6c 6c 6f 2e 2e  0 b0 eb 75 61 fd 7f  0  0
+48 65 6c 6c 6f 2e 2e  0 c0 60 fb 80 fe 7f  0  0 57 6f 72 6c 64 2e 2e  0 d0 60 fb 80 fe 7f  0  0
 $ ./stack_overflow.bin
 [Sent data]
-48 65 6c 6c 6f 2e 2e  0 b0 49 e2 96 fc 7f  0  0
+48 65 6c 6c 6f 2e 2e  0 f0 4f 4c bf ff 7f  0  0 57 6f 72 6c 64 2e 2e  0  0 50 4c bf ff 7f  0  0
 $ ./stack_overflow.bin
 [Sent data]
-48 65 6c 6c 6f 2e 2e  0 f0 66 5f 9d ff 7f  0  0
+48 65 6c 6c 6f 2e 2e  0 e0 87 7e  f fc 7f  0  0 57 6f 72 6c 64 2e 2e  0 f0 87 7e  f fc 7f  0  0
 ```
 
 You can see that this is also a nondeterministic program.  But we only sent
@@ -241,49 +257,59 @@ running stack_overflow in verbose mode using the "-v" option:
 
 ```
 $ ./stack_overflow.bin -v
-[Stack]
-third.data = .......
+[Stack Frame]
+return address = 0x7f2cf873d0b3
+old base pointer = (nil) <--- base pointer
+padding (8 bytes)
+padding (8 bytes)
 third.next = (nil)
-second.data = World..
-second.next = 0x7ffd6175ebb0 <--- Sent!
+third.data = .......
+second.next = 0x7fffeca47e60 <--- Sent!
+second.data = World.. <--- Sent!
+first.next = 0x7fffeca47e50 <--- Sent!
 first.data = Hello.. <--- Sent!
-first.next = 0x7ffd6175eba0
 [Sent data]
-48 65 6c 6c 6f 2e 2e  0 b0 eb 75 61 fd 7f  0  0
+48 65 6c 6c 6f 2e 2e  0 50 7e a4 ec ff 7f  0  0 57 6f 72 6c 64 2e 2e  0 60 7e a4 ec ff 7f  0  0
 ```
 
 You will notice that the second 8 bytes is the pointer address inside
-second.next (in reverse, since x86 architecture uses little endian ordering)!
-So why is second.next being sent along with first.data?  That is because the
-first.data buffer is only 8 bytes long, so when send_data attempts to send 16
-bytes, it also sends the 8 bytes that come after first.data, which in the stack
-layout happens to be second.next.
+first.next (in reverse, since x86 architecture uses little endian ordering)!
+So why is first.next being sent along with first.data?  That is because the
+first.data buffer is only 8 bytes long, so when send_data attempts to send
+32 bytes, it also sends the 8 bytes that come after first.data, which in the
+stack layout happens to be first.next.
 
-In short, the address inside second.next **leaks out** to program output even
+In short, the address inside first.next **leaks out** to program output even
 though the programmer never intended it in the source code.  And this address
 randomized by ASLR is what is causing the nondeterminism.  Of course, you could
-again turn off ASLR to make the buggy program run deterministically at least
+again turn off ASLR to make the buggy program run deterministically, at least
 while debugging:
 
 ```
 $ bash run_aslr_off.sh ./stack_overflow.bin
-setarch x86_64 -R ./a.out
+setarch x86_64 -R ./stack_overflow.bin
 [Sent data]
-48 65 6c 6c 6f 2e 2e  0 e0 e3 ff ff ff 7f  0  0
+48 65 6c 6c 6f 2e 2e  0 e0 e5 ff ff ff 7f  0  0 57 6f 72 6c 64 2e 2e  0 f0 e5 ff ff ff 7f  0  0
 $ bash run_aslr_off.sh ./stack_overflow.bin
-setarch x86_64 -R ./a.out
+setarch x86_64 -R ./stack_overflow.bin
 [Sent data]
-48 65 6c 6c 6f 2e 2e  0 e0 e3 ff ff ff 7f  0  0
+48 65 6c 6c 6f 2e 2e  0 e0 e5 ff ff ff 7f  0  0 57 6f 72 6c 64 2e 2e  0 f0 e5 ff ff ff 7f  0  0
 $ bash run_aslr_off.sh ./stack_overflow.bin
-setarch x86_64 -R ./a.out
+setarch x86_64 -R ./stack_overflow.bin
 [Sent data]
-48 65 6c 6c 6f 2e 2e  0 e0 e3 ff ff ff 7f  0  0
+48 65 6c 6c 6f 2e 2e  0 e0 e5 ff ff ff 7f  0  0 57 6f 72 6c 64 2e 2e  0 f0 e5 ff ff ff 7f  0  0
 ```
 
-But your end users will most likely have ASLR turned on in their machines for
-security.  What then?  Your programs will again be nondeterministic and testing
-would no longer guarantee correct behavior.  So we may still get surprise
-defects.
+Note that the memory error still exists, but the program is going to be
+easier to debug since at least you can reproduce the same behavior every
+time you run the program.
+
+But when the time comes to deploy your program, your end users will most
+likely have ASLR turned on in their machines for security.  What then?  Your
+programs will again be nondeterministic, and even if the program ran
+correctly when debugging with ASLR turned off, there is no guarantee that
+the correct behavior will be reproduced with ASLR turned back on.  So we may
+still get surprise defects.
 
 How can we have a deterministic program when all addresses are randomized?
 Easy: just don't let addresses leak out to program output!  As we discussed,
@@ -299,15 +325,15 @@ Now let's see if ASAN can find the bug for us by running the instrumented binary
 $ ./stack_overflow.asan
 [Sent data]
 =================================================================
-==2438106==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x7fffd2a23770 at pc 0x556267aa2353 bp 0x7fffd2a236f0 sp 0x7fffd2a236e0
-READ of size 1 at 0x7fffd2a23770 thread T0
-    #0 0x556267aa2352 in send_data /home/PITT/wahn/nondeterminism/C/stack_overflow.c:17
-    #1 0x556267aa2809 in main /home/PITT/wahn/nondeterminism/C/stack_overflow.c:45
-    #2 0x7f5c31cfd0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
-    #3 0x556267aa222d in _start (/u/home/PITT/wahn/nondeterminism/C/stack_overflow.asan+0x122d)
+==3982981==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x7ffc5e8d3330 at pc 0x56480b55c353 bp 0x7ffc5e8d32b0 sp 0x7ffc5e8d32a0
+READ of size 1 at 0x7ffc5e8d3330 thread T0
+    #0 0x56480b55c352 in send_data /afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/stack_overflow.c:17
+    #1 0x56480b55c8a3 in main /afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/stack_overflow.c:49
+    #2 0x7f429c3fb0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x240b2)
+    #3 0x56480b55c22d in _start (/afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/stack_overflow.asan+0x222d)
 
-Address 0x7fffd2a23770 is located in stack of thread T0 at offset 48 in frame
-    #0 0x556267aa2394 in main /home/PITT/wahn/nondeterminism/C/stack_overflow.c:22
+Address 0x7ffc5e8d3330 is located in stack of thread T0 at offset 48 in frame
+    #0 0x56480b55c394 in main /afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/stack_overflow.c:22
 
   This frame has 3 object(s):
     [32, 48) 'first' (line 23) <== Memory access at offset 48 overflows this variable
@@ -352,20 +378,20 @@ $ ./stack_pointer_return.asan
 [Sent data]
 AddressSanitizer:DEADLYSIGNAL
 =================================================================
-==2438240==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x561accf992c7 bp 0x7ffc3c7d7630 sp 0x7ffc3c7d7610 T0)
-==2438240==The signal is caused by a READ memory access.
-==2438240==Hint: address points to the zero page.
-    #0 0x561accf992c6 in send_data /home/PITT/wahn/nondeterminism/C/stack_pointer_return.c:7
-    #1 0x561accf99428 in main /home/PITT/wahn/nondeterminism/C/stack_pointer_return.c:22
-    #2 0x7f40b08d10b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
-    #3 0x561accf991ad in _start (/u/home/PITT/wahn/nondeterminism/C/stack_pointer_return.asan+0x11ad)
+==3983404==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x55be4fe0f2f3 bp 0x7ffff2292920 sp 0x7ffff2292900 T0)
+==3983404==The signal is caused by a READ memory access.
+==3983404==Hint: address points to the zero page.
+    #0 0x55be4fe0f2f2 in send_data /afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/stack_pointer_return.c:8
+    #1 0x55be4fe0f454 in main /afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/stack_pointer_return.c:23
+    #2 0x7f6edbe040b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x240b2)
+    #3 0x55be4fe0f1cd in _start (/afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/stack_pointer_return.asan+0x11cd)
 
 AddressSanitizer can not provide additional info.
-SUMMARY: AddressSanitizer: SEGV /home/PITT/wahn/nondeterminism/C/stack_pointer_return.c:7 in send_data
-==2438240==ABORTING
+SUMMARY: AddressSanitizer: SEGV /afs/pitt.edu/home/w/a/wahn/teaching/cs1632/CS1632_Sanitizer/stack_pointer_return.c:8 in send_data
+==3983404==ABORTING
 ```
 
-Again, stack_pointer_return.c:7 is flagged as an illegal read because it is
+Again, stack_pointer_return.c:8 is flagged as an illegal read because it is
 attempting to read a location that has already been deallocated.  
 
 ### Debugging
