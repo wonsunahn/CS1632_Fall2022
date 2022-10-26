@@ -689,6 +689,7 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
 	modified:   datarace.c
+	modified:   heap_overflow.c
 	modified:   stack_overflow.c
 	modified:   stack_pointer_return.c
 
