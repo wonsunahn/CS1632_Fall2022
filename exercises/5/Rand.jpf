@@ -1,0 +1,15 @@
+target = edu.pitt.cs.Rand
+classpath = ./target/classes
+sourcepath = ./src/main/java
+
+# Enumerate all possible values returned by Random.nextInt
+cg.enumerate_random = true
+
+# On property violation, print the error and the execution trace leading up to the error
+report.console.property_violation=error,trace
+
+# Print program output as JPF traverses all possible paths
+vm.tree_output = true
+
+# Don't stop at the first error.  Report all errors.
+search.multiple_errors = true

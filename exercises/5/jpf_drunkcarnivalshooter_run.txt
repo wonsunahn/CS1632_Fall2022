@@ -1,0 +1,854 @@
+JavaPathfinder core system v8.0 (rev 471fa3b7c6a9df330160844e6c2e4ebb4bf06b6c) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+DrunkCarnivalShooterImpl.main("test")
+
+====================================================== search started: 3/29/20 11:27 PM
+Round #0:  ||    ||    ||    ||
+Choose your target (0-3):
+You aimed at target #0 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #1:  ||    ||    ||    ||
+Choose your target (0-3):
+You hit target #0! "The Force is strong with this one.", Darth opines.
+
+Round #1:        ||    ||    ||
+Choose your target (0-3):
+You aimed at target #0 but the Force pulls your bullet to the right.
+You hit target #1! "The Force is strong with this one.", Darth opines.
+
+Round #1:  ||          ||    ||
+Choose your target (0-3):
+You aimed at target #1 but the Force pulls your bullet to the left.
+You hit target #0! "The Force is strong with this one.", Darth opines.
+
+Round #1:        ||    ||    ||
+Choose your target (0-3):
+You hit target #1! "The Force is strong with this one.", Darth opines.
+
+Round #1:  ||          ||    ||
+Choose your target (0-3):
+You aimed at target #1 but the Force pulls your bullet to the right.
+You hit target #2! "The Force is strong with this one.", Darth opines.
+
+Round #1:  ||    ||          ||
+Choose your target (0-3):
+You aimed at target #2 but the Force pulls your bullet to the left.
+You hit target #1! "The Force is strong with this one.", Darth opines.
+
+Round #1:  ||          ||    ||
+Choose your target (0-3):
+You hit target #2! "The Force is strong with this one.", Darth opines.
+
+Round #1:  ||    ||          ||
+Choose your target (0-3):
+You aimed at target #2 but the Force pulls your bullet to the right.
+You hit target #3! "The Force is strong with this one.", Darth opines.
+
+Round #1:  ||    ||    ||
+Choose your target (0-3):
+You aimed at target #3 but the Force pulls your bullet to the left.
+You hit target #2! "The Force is strong with this one.", Darth opines.
+
+Round #1:  ||    ||          ||
+Choose your target (0-3):
+You hit target #3! "The Force is strong with this one.", Darth opines.
+
+Round #1:  ||    ||    ||
+Choose your target (0-3):
+You aimed at target #3 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #1:  ||    ||    ||    ||
+Choose your target (0-3):
+You aimed at target #0 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #2:        ||    ||    ||
+Choose your target (0-3):
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #2:        ||    ||    ||
+Choose your target (0-3):
+You aimed at target #0 but the Force pulls your bullet to the right.
+You hit target #1! "The Force is strong with this one.", Darth opines.
+
+Round #2:              ||    ||
+Choose your target (0-3):
+You aimed at target #1 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #2:        ||    ||    ||
+Choose your target (0-3):
+You hit target #1! "The Force is strong with this one.", Darth opines.
+
+Round #2:              ||    ||
+Choose your target (0-3):
+You aimed at target #1 but the Force pulls your bullet to the right.
+You hit target #2! "The Force is strong with this one.", Darth opines.
+
+Round #2:        ||          ||
+Choose your target (0-3):
+You aimed at target #2 but the Force pulls your bullet to the left.
+You hit target #1! "The Force is strong with this one.", Darth opines.
+
+Round #2:              ||    ||
+Choose your target (0-3):
+You hit target #2! "The Force is strong with this one.", Darth opines.
+
+Round #2:        ||          ||
+Choose your target (0-3):
+You aimed at target #2 but the Force pulls your bullet to the right.
+You hit target #3! "The Force is strong with this one.", Darth opines.
+
+Round #2:        ||    ||
+Choose your target (0-3):
+You aimed at target #3 but the Force pulls your bullet to the left.
+You hit target #2! "The Force is strong with this one.", Darth opines.
+
+Round #2:        ||          ||
+Choose your target (0-3):
+You hit target #3! "The Force is strong with this one.", Darth opines.
+
+Round #2:        ||    ||
+Choose your target (0-3):
+You aimed at target #3 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #2:        ||    ||    ||
+Choose your target (0-3):
+You aimed at target #0 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #2:  ||          ||    ||
+Choose your target (0-3):
+You hit target #0! "The Force is strong with this one.", Darth opines.
+
+Round #2:              ||    ||
+Choose your target (0-3):
+You aimed at target #0 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #2:  ||          ||    ||
+Choose your target (0-3):
+You aimed at target #1 but the Force pulls your bullet to the left.
+You hit target #0! "The Force is strong with this one.", Darth opines.
+
+Round #2:              ||    ||
+Choose your target (0-3):
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #2:  ||          ||    ||
+Choose your target (0-3):
+You aimed at target #1 but the Force pulls your bullet to the right.
+You hit target #2! "The Force is strong with this one.", Darth opines.
+
+Round #2:  ||                ||
+Choose your target (0-3):
+You aimed at target #2 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #2:  ||          ||    ||
+Choose your target (0-3):
+You hit target #2! "The Force is strong with this one.", Darth opines.
+
+Round #2:  ||                ||
+Choose your target (0-3):
+You aimed at target #2 but the Force pulls your bullet to the right.
+You hit target #3! "The Force is strong with this one.", Darth opines.
+
+Round #2:  ||          ||
+Choose your target (0-3):
+You aimed at target #3 but the Force pulls your bullet to the left.
+You hit target #2! "The Force is strong with this one.", Darth opines.
+
+Round #2:  ||                ||
+Choose your target (0-3):
+You hit target #3! "The Force is strong with this one.", Darth opines.
+
+Round #2:  ||          ||
+Choose your target (0-3):
+You aimed at target #3 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #2:  ||          ||    ||
+Choose your target (0-3):
+You aimed at target #0 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #2:  ||    ||          ||
+Choose your target (0-3):
+You hit target #0! "The Force is strong with this one.", Darth opines.
+
+Round #2:        ||          ||
+Choose your target (0-3):
+You aimed at target #0 but the Force pulls your bullet to the right.
+You hit target #1! "The Force is strong with this one.", Darth opines.
+
+Round #2:  ||                ||
+Choose your target (0-3):
+You aimed at target #1 but the Force pulls your bullet to the left.
+You hit target #0! "The Force is strong with this one.", Darth opines.
+
+Round #2:        ||          ||
+Choose your target (0-3):
+You hit target #1! "The Force is strong with this one.", Darth opines.
+
+Round #2:  ||                ||
+Choose your target (0-3):
+You aimed at target #1 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #2:  ||    ||          ||
+Choose your target (0-3):
+You aimed at target #2 but the Force pulls your bullet to the left.
+You hit target #1! "The Force is strong with this one.", Darth opines.
+
+Round #2:  ||                ||
+Choose your target (0-3):
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #2:  ||    ||          ||
+Choose your target (0-3):
+You aimed at target #2 but the Force pulls your bullet to the right.
+You hit target #3! "The Force is strong with this one.", Darth opines.
+
+Round #2:  ||    ||
+Choose your target (0-3):
+You aimed at target #3 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #2:  ||    ||          ||
+Choose your target (0-3):
+You hit target #3! "The Force is strong with this one.", Darth opines.
+
+Round #2:  ||    ||
+Choose your target (0-3):
+You aimed at target #3 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #2:  ||    ||          ||
+Choose your target (0-3):
+You aimed at target #0 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #2:  ||    ||    ||
+Choose your target (0-3):
+You hit target #0! "The Force is strong with this one.", Darth opines.
+
+Round #2:        ||    ||
+Choose your target (0-3):
+You aimed at target #0 but the Force pulls your bullet to the right.
+You hit target #1! "The Force is strong with this one.", Darth opines.
+
+Round #2:  ||          ||
+Choose your target (0-3):
+You aimed at target #1 but the Force pulls your bullet to the left.
+You hit target #0! "The Force is strong with this one.", Darth opines.
+
+Round #2:        ||    ||
+Choose your target (0-3):
+You hit target #1! "The Force is strong with this one.", Darth opines.
+
+Round #2:  ||          ||
+Choose your target (0-3):
+You aimed at target #1 but the Force pulls your bullet to the right.
+You hit target #2! "The Force is strong with this one.", Darth opines.
+
+Round #2:  ||    ||
+Choose your target (0-3):
+You aimed at target #2 but the Force pulls your bullet to the left.
+You hit target #1! "The Force is strong with this one.", Darth opines.
+
+Round #2:  ||          ||
+Choose your target (0-3):
+You hit target #2! "The Force is strong with this one.", Darth opines.
+
+Round #2:  ||    ||
+Choose your target (0-3):
+You aimed at target #2 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #2:  ||    ||    ||
+Choose your target (0-3):
+You aimed at target #3 but the Force pulls your bullet to the left.
+You hit target #2! "The Force is strong with this one.", Darth opines.
+
+Round #2:  ||    ||
+Choose your target (0-3):
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #2:  ||    ||    ||
+Choose your target (0-3):
+You aimed at target #3 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #2:  ||    ||    ||
+Choose your target (0-3):
+You aimed at target #0 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:              ||    ||
+Choose your target (0-3):
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:              ||    ||
+Choose your target (0-3):
+You aimed at target #0 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:              ||    ||
+Choose your target (0-3):
+You aimed at target #1 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:              ||    ||
+Choose your target (0-3):
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:              ||    ||
+Choose your target (0-3):
+You aimed at target #1 but the Force pulls your bullet to the right.
+You hit target #2! "The Force is strong with this one.", Darth opines.
+
+Round #3:                    ||
+Choose your target (0-3):
+You aimed at target #2 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:              ||    ||
+Choose your target (0-3):
+You hit target #2! "The Force is strong with this one.", Darth opines.
+
+Round #3:                    ||
+Choose your target (0-3):
+You aimed at target #2 but the Force pulls your bullet to the right.
+You hit target #3! "The Force is strong with this one.", Darth opines.
+
+Round #3:              ||
+Choose your target (0-3):
+You aimed at target #3 but the Force pulls your bullet to the left.
+You hit target #2! "The Force is strong with this one.", Darth opines.
+
+Round #3:                    ||
+Choose your target (0-3):
+You hit target #3! "The Force is strong with this one.", Darth opines.
+
+Round #3:              ||
+Choose your target (0-3):
+You aimed at target #3 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:              ||    ||
+Choose your target (0-3):
+You aimed at target #0 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:        ||          ||
+Choose your target (0-3):
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:        ||          ||
+Choose your target (0-3):
+You aimed at target #0 but the Force pulls your bullet to the right.
+You hit target #1! "The Force is strong with this one.", Darth opines.
+
+Round #3:                    ||
+Choose your target (0-3):
+You aimed at target #1 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:        ||          ||
+Choose your target (0-3):
+You hit target #1! "The Force is strong with this one.", Darth opines.
+
+Round #3:                    ||
+Choose your target (0-3):
+You aimed at target #1 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:        ||          ||
+Choose your target (0-3):
+You aimed at target #2 but the Force pulls your bullet to the left.
+You hit target #1! "The Force is strong with this one.", Darth opines.
+
+Round #3:                    ||
+Choose your target (0-3):
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:        ||          ||
+Choose your target (0-3):
+You aimed at target #2 but the Force pulls your bullet to the right.
+You hit target #3! "The Force is strong with this one.", Darth opines.
+
+Round #3:        ||
+Choose your target (0-3):
+You aimed at target #3 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:        ||          ||
+Choose your target (0-3):
+You hit target #3! "The Force is strong with this one.", Darth opines.
+
+Round #3:        ||
+Choose your target (0-3):
+You aimed at target #3 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:        ||          ||
+Choose your target (0-3):
+You aimed at target #0 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:        ||    ||
+Choose your target (0-3):
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:        ||    ||
+Choose your target (0-3):
+You aimed at target #0 but the Force pulls your bullet to the right.
+You hit target #1! "The Force is strong with this one.", Darth opines.
+
+Round #3:              ||
+Choose your target (0-3):
+You aimed at target #1 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:        ||    ||
+Choose your target (0-3):
+You hit target #1! "The Force is strong with this one.", Darth opines.
+
+Round #3:              ||
+Choose your target (0-3):
+You aimed at target #1 but the Force pulls your bullet to the right.
+You hit target #2! "The Force is strong with this one.", Darth opines.
+
+Round #3:        ||
+Choose your target (0-3):
+You aimed at target #2 but the Force pulls your bullet to the left.
+You hit target #1! "The Force is strong with this one.", Darth opines.
+
+Round #3:              ||
+Choose your target (0-3):
+You hit target #2! "The Force is strong with this one.", Darth opines.
+
+Round #3:        ||
+Choose your target (0-3):
+You aimed at target #2 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:        ||    ||
+Choose your target (0-3):
+You aimed at target #3 but the Force pulls your bullet to the left.
+You hit target #2! "The Force is strong with this one.", Darth opines.
+
+Round #3:        ||
+Choose your target (0-3):
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:        ||    ||
+Choose your target (0-3):
+You aimed at target #3 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:        ||    ||
+Choose your target (0-3):
+You aimed at target #0 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:  ||                ||
+Choose your target (0-3):
+You hit target #0! "The Force is strong with this one.", Darth opines.
+
+Round #3:                    ||
+Choose your target (0-3):
+You aimed at target #0 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:  ||                ||
+Choose your target (0-3):
+You aimed at target #1 but the Force pulls your bullet to the left.
+You hit target #0! "The Force is strong with this one.", Darth opines.
+
+Round #3:                    ||
+Choose your target (0-3):
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:  ||                ||
+Choose your target (0-3):
+You aimed at target #1 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:  ||                ||
+Choose your target (0-3):
+You aimed at target #2 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:  ||                ||
+Choose your target (0-3):
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:  ||                ||
+Choose your target (0-3):
+You aimed at target #2 but the Force pulls your bullet to the right.
+You hit target #3! "The Force is strong with this one.", Darth opines.
+
+Round #3:  ||
+Choose your target (0-3):
+You aimed at target #3 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:  ||                ||
+Choose your target (0-3):
+You hit target #3! "The Force is strong with this one.", Darth opines.
+
+Round #3:  ||
+Choose your target (0-3):
+You aimed at target #3 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:  ||                ||
+Choose your target (0-3):
+You aimed at target #0 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:  ||          ||
+Choose your target (0-3):
+You hit target #0! "The Force is strong with this one.", Darth opines.
+
+Round #3:              ||
+Choose your target (0-3):
+You aimed at target #0 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:  ||          ||
+Choose your target (0-3):
+You aimed at target #1 but the Force pulls your bullet to the left.
+You hit target #0! "The Force is strong with this one.", Darth opines.
+
+Round #3:              ||
+Choose your target (0-3):
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:  ||          ||
+Choose your target (0-3):
+You aimed at target #1 but the Force pulls your bullet to the right.
+You hit target #2! "The Force is strong with this one.", Darth opines.
+
+Round #3:  ||
+Choose your target (0-3):
+You aimed at target #2 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:  ||          ||
+Choose your target (0-3):
+You hit target #2! "The Force is strong with this one.", Darth opines.
+
+Round #3:  ||
+Choose your target (0-3):
+You aimed at target #2 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:  ||          ||
+Choose your target (0-3):
+You aimed at target #3 but the Force pulls your bullet to the left.
+You hit target #2! "The Force is strong with this one.", Darth opines.
+
+Round #3:  ||
+Choose your target (0-3):
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:  ||          ||
+Choose your target (0-3):
+You aimed at target #3 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:  ||          ||
+Choose your target (0-3):
+You aimed at target #0 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:  ||    ||
+Choose your target (0-3):
+You hit target #0! "The Force is strong with this one.", Darth opines.
+
+Round #3:        ||
+Choose your target (0-3):
+You aimed at target #0 but the Force pulls your bullet to the right.
+You hit target #1! "The Force is strong with this one.", Darth opines.
+
+Round #3:  ||
+Choose your target (0-3):
+You aimed at target #1 but the Force pulls your bullet to the left.
+You hit target #0! "The Force is strong with this one.", Darth opines.
+
+Round #3:        ||
+Choose your target (0-3):
+You hit target #1! "The Force is strong with this one.", Darth opines.
+
+Round #3:  ||
+Choose your target (0-3):
+You aimed at target #1 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:  ||    ||
+Choose your target (0-3):
+You aimed at target #2 but the Force pulls your bullet to the left.
+You hit target #1! "The Force is strong with this one.", Darth opines.
+
+Round #3:  ||
+Choose your target (0-3):
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:  ||    ||
+Choose your target (0-3):
+You aimed at target #2 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:  ||    ||
+Choose your target (0-3):
+You aimed at target #3 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:  ||    ||
+Choose your target (0-3):
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:  ||    ||
+Choose your target (0-3):
+You aimed at target #3 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #3:  ||    ||
+Choose your target (0-3):
+You aimed at target #0 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:                    ||
+Choose your target (0-3):
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:                    ||
+Choose your target (0-3):
+You aimed at target #0 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:                    ||
+Choose your target (0-3):
+You aimed at target #1 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:                    ||
+Choose your target (0-3):
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:                    ||
+Choose your target (0-3):
+You aimed at target #1 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:                    ||
+Choose your target (0-3):
+You aimed at target #2 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:                    ||
+Choose your target (0-3):
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:                    ||
+Choose your target (0-3):
+You aimed at target #2 but the Force pulls your bullet to the right.
+You hit target #3! "The Force is strong with this one.", Darth opines.
+
+You decimate all the targets. Where is my prize?
+You aimed at target #3 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:                    ||
+Choose your target (0-3):
+You hit target #3! "The Force is strong with this one.", Darth opines.
+
+You decimate all the targets. Where is my prize?
+You aimed at target #3 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:                    ||
+Choose your target (0-3):
+You aimed at target #0 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:              ||
+Choose your target (0-3):
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:              ||
+Choose your target (0-3):
+You aimed at target #0 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:              ||
+Choose your target (0-3):
+You aimed at target #1 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:              ||
+Choose your target (0-3):
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:              ||
+Choose your target (0-3):
+You aimed at target #1 but the Force pulls your bullet to the right.
+You hit target #2! "The Force is strong with this one.", Darth opines.
+
+You decimate all the targets. Where is my prize?
+You aimed at target #2 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:              ||
+Choose your target (0-3):
+You hit target #2! "The Force is strong with this one.", Darth opines.
+
+You decimate all the targets. Where is my prize?
+You aimed at target #2 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:              ||
+Choose your target (0-3):
+You aimed at target #3 but the Force pulls your bullet to the left.
+You hit target #2! "The Force is strong with this one.", Darth opines.
+
+You decimate all the targets. Where is my prize?
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:              ||
+Choose your target (0-3):
+You aimed at target #3 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:              ||
+Choose your target (0-3):
+You aimed at target #0 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:        ||
+Choose your target (0-3):
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:        ||
+Choose your target (0-3):
+You aimed at target #0 but the Force pulls your bullet to the right.
+You hit target #1! "The Force is strong with this one.", Darth opines.
+
+You decimate all the targets. Where is my prize?
+You aimed at target #1 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:        ||
+Choose your target (0-3):
+You hit target #1! "The Force is strong with this one.", Darth opines.
+
+You decimate all the targets. Where is my prize?
+You aimed at target #1 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:        ||
+Choose your target (0-3):
+You aimed at target #2 but the Force pulls your bullet to the left.
+You hit target #1! "The Force is strong with this one.", Darth opines.
+
+You decimate all the targets. Where is my prize?
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:        ||
+Choose your target (0-3):
+You aimed at target #2 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:        ||
+Choose your target (0-3):
+You aimed at target #3 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:        ||
+Choose your target (0-3):
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:        ||
+Choose your target (0-3):
+You aimed at target #3 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:        ||
+Choose your target (0-3):
+You aimed at target #0 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:  ||
+Choose your target (0-3):
+You hit target #0! "The Force is strong with this one.", Darth opines.
+
+You decimate all the targets. Where is my prize?
+You aimed at target #0 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:  ||
+Choose your target (0-3):
+You aimed at target #1 but the Force pulls your bullet to the left.
+You hit target #0! "The Force is strong with this one.", Darth opines.
+
+You decimate all the targets. Where is my prize?
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:  ||
+Choose your target (0-3):
+You aimed at target #1 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:  ||
+Choose your target (0-3):
+You aimed at target #2 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:  ||
+Choose your target (0-3):
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:  ||
+Choose your target (0-3):
+You aimed at target #2 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:  ||
+Choose your target (0-3):
+You aimed at target #3 but the Force pulls your bullet to the left.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:  ||
+Choose your target (0-3):
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:  ||
+Choose your target (0-3):
+You aimed at target #3 but the Force pulls your bullet to the right.
+You miss! "Do or do not. There is no try.", Yoda chides.
+
+Round #4:  ||
+Choose your target (0-3):
+
+====================================================== results
+no errors detected
+
+====================================================== statistics
+elapsed time:       00:00:01
+states:             new=233,visited=633,backtracked=866,end=10
+search:             maxDepth=10,constraints=0
+choice generators:  thread=2 (signal=0,lock=1,sharedRef=0,threadApi=0,reschedule=1), data=231
+heap:               new=10079,released=8173,maxLive=1806,gcCycles=866
+instructions:       208837
+max memory:         245MB
+loaded code:        classes=151,methods=3110
+
+====================================================== search finished: 3/29/20 11:27 PM

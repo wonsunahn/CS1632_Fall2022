@@ -1,0 +1,104 @@
+JavaPathfinder core system v8.0 (rev 471fa3b7c6a9df330160844e6c2e4ebb4bf06b6c) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+TestRunner.main("buggy")
+
+====================================================== search started: 10/25/20 10:21 PM
+TESTING BUGGY IMPLEMENTATION
+
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:        ||               (targetChoice=0): expected:<0> but was:<-1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:        ||          ||   (targetChoice=0): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:        ||    ||         (targetChoice=0): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:        ||    ||    ||   (targetChoice=0): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||                     (targetChoice=0): expected:<0> but was:<-1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||                ||   (targetChoice=0): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||          ||         (targetChoice=0): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||          ||    ||   (targetChoice=0): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||               (targetChoice=0): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||               (targetChoice=0): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||          ||   (targetChoice=0): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||          ||   (targetChoice=0): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||    ||         (targetChoice=0): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||    ||         (targetChoice=0): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||    ||    ||   (targetChoice=0): expected:<3> but was:<2>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||    ||    ||   (targetChoice=0): expected:<3> but was:<2>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:              ||         (targetChoice=1): expected:<0> but was:<-1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:              ||    ||   (targetChoice=1): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:        ||               (targetChoice=1): expected:<0> but was:<-1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:        ||          ||   (targetChoice=1): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:        ||    ||         (targetChoice=1): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:        ||    ||         (targetChoice=1): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:        ||    ||    ||   (targetChoice=1): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:        ||    ||    ||   (targetChoice=1): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||                     (targetChoice=1): expected:<0> but was:<-1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||                ||   (targetChoice=1): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||          ||         (targetChoice=1): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||          ||         (targetChoice=1): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||          ||    ||   (targetChoice=1): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||          ||    ||   (targetChoice=1): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||               (targetChoice=1): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||               (targetChoice=1): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||          ||   (targetChoice=1): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||          ||   (targetChoice=1): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||    ||         (targetChoice=1): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||    ||         (targetChoice=1): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||    ||         (targetChoice=1): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||    ||    ||   (targetChoice=1): expected:<3> but was:<2>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||    ||    ||   (targetChoice=1): expected:<3> but was:<2>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||    ||    ||   (targetChoice=1): expected:<3> but was:<2>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:                    ||   (targetChoice=2): expected:<0> but was:<-1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:              ||         (targetChoice=2): expected:<0> but was:<-1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:              ||    ||   (targetChoice=2): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:              ||    ||   (targetChoice=2): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:        ||               (targetChoice=2): expected:<0> but was:<-1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:        ||          ||   (targetChoice=2): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:        ||          ||   (targetChoice=2): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:        ||    ||         (targetChoice=2): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:        ||    ||         (targetChoice=2): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:        ||    ||    ||   (targetChoice=2): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:        ||    ||    ||   (targetChoice=2): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:        ||    ||    ||   (targetChoice=2): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||                ||   (targetChoice=2): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||          ||         (targetChoice=2): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||          ||    ||   (targetChoice=2): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||          ||    ||   (targetChoice=2): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||               (targetChoice=2): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||          ||   (targetChoice=2): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||          ||   (targetChoice=2): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||    ||         (targetChoice=2): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||    ||         (targetChoice=2): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||    ||    ||   (targetChoice=2): expected:<3> but was:<2>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||    ||    ||   (targetChoice=2): expected:<3> but was:<2>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||    ||    ||   (targetChoice=2): expected:<3> but was:<2>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:                    ||   (targetChoice=3): expected:<0> but was:<-1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:              ||         (targetChoice=3): expected:<0> but was:<-1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:              ||    ||   (targetChoice=3): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:              ||    ||   (targetChoice=3): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:        ||          ||   (targetChoice=3): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:        ||    ||         (targetChoice=3): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:        ||    ||    ||   (targetChoice=3): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:        ||    ||    ||   (targetChoice=3): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||                ||   (targetChoice=3): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||          ||         (targetChoice=3): expected:<1> but was:<0>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||          ||    ||   (targetChoice=3): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||          ||    ||   (targetChoice=3): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||          ||   (targetChoice=3): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||    ||         (targetChoice=3): expected:<2> but was:<1>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||    ||    ||   (targetChoice=3): expected:<3> but was:<2>
+testShoot(DrunkCarnivalShooterTest): Failure in Round #0:  ||    ||    ||    ||   (targetChoice=3): expected:<3> but was:<2>
+
+====================================================== results
+no errors detected
+
+====================================================== statistics
+elapsed time:       00:00:01
+states:             new=127,visited=190,backtracked=317,end=192
+search:             maxDepth=7,constraints=0
+choice generators:  thread=1 (signal=0,lock=1,sharedRef=0,threadApi=0,reschedule=0), data=125
+heap:               new=19796,released=37452,maxLive=1658,gcCycles=317
+instructions:       479960
+max memory:         245MB
+loaded code:        classes=285,methods=4131
+
+====================================================== search finished: 10/25/20 10:21 PM
