@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class DrunkCarnivalShooterImpl implements DrunkCarnivalShooter {
 	private static Random rand;
 
-	private static ArrayList<Boolean> targets;
+	private ArrayList<Boolean> targets;
 	private static int remainingTargetNum;
 
 	private static int roundNum;
@@ -27,7 +27,7 @@ public class DrunkCarnivalShooterImpl implements DrunkCarnivalShooter {
 	DrunkCarnivalShooterImpl() {
 		rand = new Random();
 		targets = new ArrayList<Boolean>();
-		targets = null;
+		//targets = null;
 		remainingTargetNum = 4;
 		for (int i = 0; i < remainingTargetNum; i++) {
 			targets.add(true);

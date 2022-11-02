@@ -1,0 +1,18 @@
+classpath = target/classes:target/test-classes:BeanCounterSolution.jar:BeanCounterBuggy.jar:CommandLineJunit/junit-4.12.jar:CommandLineJunit/hamcrest-core-1.3.jar:CommandLineJunit/mockito-core-1.10.19.jar:CommandLineJunit/objenesis-2.4.jar
+sourcepath = src/main/java;src/test/java
+
+# Target class main method to run.  In this case, we are invoking JUnit through the TestRunner.
+# It's like running any JUnit test except that now we are running each test case many times for each path explored by Java Path Finder.
+target = edu.pitt.cs.TestRunner
+
+# If set to true, enumerates all possible values returned by Random.nextInt.
+# If set to false, the original Random.nextInt is called to generate an actual random number.
+# Temporarily set to false if you are overwhelmed with error messages from all the possible paths.
+cg.enumerate_random = true
+#cg.enumerate_random = false
+
+# On property violation, print the error, the choice trace, and the Java stack snapshot
+report.console.property_violation=error,trace,snapshot
+
+# If true, prints program output as JPF traverses all possible paths
+vm.tree_output = true
