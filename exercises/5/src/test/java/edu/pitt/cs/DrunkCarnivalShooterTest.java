@@ -61,10 +61,14 @@ public class DrunkCarnivalShooterTest {
 	/**
 	 * Test case for boolean shoot(int t, StringBuilder builder).
 	 * 
-	 * <p>Preconditions: Create StringBuilder builder = new StringBuilder();
-	 * <br>Execution steps: Call shooter.shoot(targetChoice, builder);
-	 * <br>Invariant: The number of targets which returns true on shooter.isTargetStanding(i)
+	 * <pre>
+	 * Preconditions: targetChoice has been initialized with a target number.
+	 *                shooter is instantiated with DrunkCarnivalShooter.createInstance() with preconfigured targets.
+	 *                builder is instantiated with new StringBuilder().
+	 * >Execution steps: Call shooter.shoot(targetChoice, builder);
+	 * Invariant: The number of targets which returns true on shooter.isTargetStanding(i)
 	 *            where i = 0 ... 3 is equal to shooter.getRemainingTargetNum().
+	 * </pre>
 	 */
 	@Test
 	public void testShoot() {
