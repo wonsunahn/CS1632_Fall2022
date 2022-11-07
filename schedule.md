@@ -118,7 +118,10 @@ AFIST = [_A Friendly Introduction to Software Testing_](software-quality-assuran
 
 ## WEEK 14 (Week of 28 NOV)
 
-* Guest Lectures: TBD
+* November 28 (Monday) 9:30 AM - 10:15 AM: Sheetz Lecture on Site Reliability Engineering
+* November 28 (Monday) 3:00 PM - 4:15 PM: Hitachi Energy Lecture
+* November 30 (Wednesday) 9:30 AM - 10:15 AM: BNY Mellon Lecture on Security and Performance Testing
+* November 30 (Wednesday) 3:00 PM - 4:15 PM: CGI Lecture on Self-Healing Web Application Testing
 
 ## WEEK 15 (Week of 5 DEC)
 
