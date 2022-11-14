@@ -690,7 +690,7 @@ workflow run and is given the permissions specified in the "permissions:"
 entry.
 
 After the maven-publish.yml is committed and pushed, you also need to edit
-the pom.xml file and add the below text after the <scm>...</scm> element:
+the pom.xml file and add the below text after the \<scm\>...\</scm\> element:
 
 ```
   <distributionManagement>
@@ -702,7 +702,7 @@ the pom.xml file and add the below text after the <scm>...</scm> element:
   </distributionManagement>
 ```
 
-Replace the repository name in the <url>...</url> element with your own
+Replace the repository name in the \<url\>...\</url\> element with your own
 repository name.
 
 Now we are ready to create a new release to see if this works!  Go to the
