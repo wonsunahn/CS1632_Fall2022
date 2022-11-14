@@ -1,0 +1,6 @@
+/bin/
+/doc/
+/target/
+*.swp
+*.un~
+*.md~
