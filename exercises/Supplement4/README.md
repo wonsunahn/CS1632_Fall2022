@@ -702,6 +702,16 @@ the pom.xml file and add the below text after the \<scm\>...\</scm\> element:
   </distributionManagement>
 ```
 
+You also need to find the artifactId and append your PittID to it so that it
+becomes unique.  If your PittID has a capital letter please convert it to
+lowercase (GitHub package names don't work with capital letters for some
+reason).  For example, if you PittID was wahn (like mine), please change it
+to:
+
+```
+<artifactId>cs1632-cicd-junit-wahn</artifactId>
+```
+
 Replace the repository name in the \<url\>...\</url\> element with your own
 repository name.
 
