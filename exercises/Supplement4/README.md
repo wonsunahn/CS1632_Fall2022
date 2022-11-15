@@ -786,7 +786,9 @@ token name:
 
    <img alt="Copy project key" src=img/sonarcloud_5.png>
 
-1. Head back to your GitHub repository again and open sonar-project.properties:
+1. Head back to your GitHub repository again and open
+   sonar-project.properties.  Paste the Project Key that you copied from
+SonarCloud after the "sonar.projectKey=" entry and then commit and push.  
 
    ```
    # The Project Key and Organization Key generated when setting up the project on SonarQube
@@ -799,10 +801,37 @@ token name:
    sonar.sources=src
    sonar.java.binaries=target/classes
    ```
-   
-   Paste the Project Key that you copied from SonarCloud after the
-"sonar.projectKey=" entry and then commit and push.  This will trigger a new
-Maven CI run:
+
+1. Now you are finally ready to add a job to run SonarQube tests as now it
+   know how to locate your project on SonarCloud and access it using your
+token.  Open the maven-ci.yml workflow file to add the following job at the bottom:
+
+   ```
+   sonarqube_test:
+    
+     needs: [maven_test]
+
+     runs-on: ubuntu-latest
+
+     permissions:
+       contents: read
+
+     steps:
+
+     - name: Restore cached build
+       uses: actions/cache@v3
+       with:
+         key: cached-build-${{github.sha}}
+         path: .
+
+     - name: SonarQube Scan
+       uses: sonarsource/sonarqube-scan-action@master
+       env:
+         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+         SONAR_HOST_URL: https://sonarcloud.io
+   ```
+
+   This will trigger a new Maven CI run:
 
    <img alt="Maven CI with SonarQube" src=img/sonarcloud_6.png>
 
