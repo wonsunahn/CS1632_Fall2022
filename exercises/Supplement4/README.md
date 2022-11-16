@@ -25,7 +25,7 @@
 # CS 1632 - Software Quality Assurance
 Fall Semester 2022 - Supplementary Exercise 4
 
-* DUE: December 2 (Friday), 2022 11:59 PM
+* DUE: December 7 (Wednesday), 2022 11:59 PM
 
 ## Description
 
