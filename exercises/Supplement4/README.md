@@ -697,7 +697,7 @@ workflow run and is given the permissions specified in the "permissions:"
 entry.
 
 After the maven-publish.yml is committed and pushed, you also need to edit
-the pom.xml file and add the below text after the <scm>...</scm> element:
+the pom.xml file and add the below text after the \<scm\>...\</scm\> element:
 
 ```
   <distributionManagement>
@@ -709,7 +709,17 @@ the pom.xml file and add the below text after the <scm>...</scm> element:
   </distributionManagement>
 ```
 
-Replace the repository name in the <url>...</url> element with your own
+You also need to find the artifactId and append your PittID to it so that it
+becomes unique.  If your PittID has a capital letter please convert it to
+lowercase (GitHub package names don't work with capital letters for some
+reason).  For example, if you PittID was wahn (like mine), please change it
+to:
+
+```
+<artifactId>cs1632-cicd-junit-wahn</artifactId>
+```
+
+Replace the repository name in the \<url\>...\</url\> element with your own
 repository name.
 
 Now we are ready to create a new release to see if this works!  Go to the
@@ -783,7 +793,9 @@ token name:
 
    <img alt="Copy project key" src=img/sonarcloud_5.png>
 
-1. Head back to your GitHub repository again and open sonar-project.properties:
+1. Head back to your GitHub repository again and open
+   sonar-project.properties.  Paste the Project Key that you copied from
+SonarCloud after the "sonar.projectKey=" entry and then commit and push.  
 
    ```
    # The Project Key and Organization Key generated when setting up the project on SonarQube
@@ -796,10 +808,37 @@ token name:
    sonar.sources=src
    sonar.java.binaries=target/classes
    ```
-   
-   Paste the Project Key that you copied from SonarCloud after the
-"sonar.projectKey=" entry and then commit and push.  This will trigger a new
-Maven CI run:
+
+1. Now you are finally ready to add a job to run SonarQube tests as now it
+   know how to locate your project on SonarCloud and access it using your
+token.  Open the maven-ci.yml workflow file to add the following job at the bottom:
+
+   ```
+   sonarqube_test:
+    
+     needs: [maven_test]
+
+     runs-on: ubuntu-latest
+
+     permissions:
+       contents: read
+
+     steps:
+
+     - name: Restore cached build
+       uses: actions/cache@v3
+       with:
+         key: cached-build-${{github.sha}}
+         path: .
+
+     - name: SonarQube Scan
+       uses: sonarsource/sonarqube-scan-action@master
+       env:
+         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+         SONAR_HOST_URL: https://sonarcloud.io
+   ```
+
+   This will trigger a new Maven CI run:
 
    <img alt="Maven CI with SonarQube" src=img/sonarcloud_6.png>
 
