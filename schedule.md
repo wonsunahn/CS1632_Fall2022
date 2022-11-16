@@ -119,9 +119,21 @@ AFIST = [_A Friendly Introduction to Software Testing_](software-quality-assuran
 ## WEEK 14 (Week of 28 NOV)
 
 * November 28 (Monday) 9:30 AM - 10:15 AM: Sheetz Lecture on Site Reliability Engineering
+  * Posvar Hall 3415
+  * Join URL: https://pitt.zoom.us/j/98672018981 (only for students of the other section)
 * November 28 (Monday) 3:00 PM - 4:15 PM: Hitachi Energy Lecture
+  * Sennott Square 6110
+  * Join URL: https://pitt.zoom.us/j/96526418009 (only for students of the other section)
 * November 30 (Wednesday) 9:30 AM - 10:15 AM: BNY Mellon Lecture on Security and Performance Testing
+  * Posvar Hall 3415
+  * Join URL: https://pitt.zoom.us/j/93175937195 (only for students of the other section)
 * November 30 (Wednesday) 3:00 PM - 4:15 PM: CGI Lecture on Self-Healing Web Application Testing
+  * Sennott Square 6110
+  * Join URL: https://pitt.zoom.us/j/94861118920 (only for students of the other section)
+
+* Please attend the lecture for your section in-person.  These people are making the trek from their office so let's afford them the same courtesy.  Even if the lecture happens in the other section, you are encouraged to attend either in-person or through Zoom.  The Zoom links are available for the other section only and I will post the passcode only there.
+
+* Attendance will be taken and it will count for 2X compared to your normal attendance since we are not doing exercises.  Attendance of lectures happening in the other section will count as attendance too (I will monitor the Zoom participants).
 
 ## WEEK 15 (Week of 5 DEC)
 
