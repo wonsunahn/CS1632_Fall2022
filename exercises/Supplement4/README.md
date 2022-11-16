@@ -21,7 +21,6 @@
     + [Pull published Docker image and launch from desktop](#pull-published-docker-image-and-launch-from-desktop)
 - [Submission](#submission)
 - [Groupwork Plan](#groupwork-plan)
-- [Resources](#resources)
 
 # CS 1632 - Software Quality Assurance
 Fall Semester 2022 - Supplementary Exercise 4
@@ -853,7 +852,7 @@ parallel.
 
 ## Part 2: Dockers
 
-**GitHub Classroom Link:** TBD
+**GitHub Classroom Link:** https://classroom.github.com/a/Fqfr_whk
 
 In Part 2, we will use Docker to test and deploy the Rent-A-Cat website that
 we tested in Deliverable 3.  We will test the website using the Selenium
@@ -1401,5 +1400,3 @@ individual repositories for each of you, so please work on your own
 repositories to implement the pipelines.  After both of you are done,
 compare the YAML files that each of you wrote.  Discuss, resolve any
 differences, and submit the GitHub repository of your choice.
-
-# Resources
