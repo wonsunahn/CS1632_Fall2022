@@ -137,9 +137,9 @@ AFIST = [_A Friendly Introduction to Software Testing_](software-quality-assuran
 
 ## WEEK 15 (Week of 5 DEC)
 
-* Class 1: Midterm 2 review
+* Class 1: In-class Supplementary Exercise 4 wrap up / Deliverable 5 Q & A
 
-* Class 2: NO CLASS (Study for Midterm 2)
+* Class 2: Midterm 2 review
 
 * Midterm 2 on GradeScope: December 8 (Thursday) 10:00 AM - December 10 (Saturday) 11:59 PM
   * Check out the **[study guide](/study_guides/midterm_2_study_guide.md)**!
