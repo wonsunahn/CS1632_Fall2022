@@ -1367,7 +1367,32 @@ below:
 
 ### Pull published Docker image and launch from desktop
 
-Copy the "Install from the command line" text, in my case:
+Since your repository is private, you need to authenticate to your GitHub
+repository before pulling the package.  You will use the PAT (Personal
+Authentication Token) that you generated previously for this purpose.  TO do
+so, you need to add permissions to access packages to the PAT.  On GitHub,
+go to Account > Settings > Developer Settings > Personal Access Tokens >
+Tokens (classic) to find your PAT and check write:packages (which should
+automatically check read:packages as well).  If you forgot the PAT string,
+click on "Regenerate Token" to obtain the string again.
+
+Now on the commandline do:
+
+```
+docker login ghcr.io -u <github_username>
+```
+
+It is going to ask for your password and this is where you provide your PAT.
+This is how the interaction should look like:
+
+```
+$ docker login ghcr.io -u wonsunahn
+Password: 
+Login Succeeded
+```
+
+Next, copy the "Install from the command line" text from your GitHub package
+page, which was in my case:
 
 ```
 docker pull ghcr.io/cs1632/supplementary-exercise-4-dockers-wonsunahn:main
