@@ -27,6 +27,8 @@ public interface BeanCounterLogic {
 	public static final int NO_BEAN_IN_YPOS = -1;
 
 	// Methods
+	public int getSlotCount();
+	
 	public int getRemainingBeanCount();
 
 	public int getInFlightBeanXPos(int yPos);
