@@ -122,10 +122,8 @@ AFIST = [_A Friendly Introduction to Software Testing_](software-quality-assuran
   * Speaker: Ryan Casey, Senior Site Reliability Engineer, [LinkedIn](https://www.linkedin.com/in/ryan-casey-6071149/)
   * Posvar Hall 3415
   * Join URL: https://pitt.zoom.us/j/98672018981 (only for students of the other section)
-* November 28 (Monday) 3:00 PM - 4:15 PM: Hitachi Energy Lecture
-  * Speaker: Rober Magee, Operations Manager, [LinkedIn](https://www.linkedin.com/in/robert-magee-76a20262/)
-  * Sennott Square 6110
-  * Join URL: https://pitt.zoom.us/j/96526418009 (only for students of the other section)
+* November 28 (Monday) 3:00 PM - 4:15 PM: Supplementary Exercise 4, Deliverable 5 Q and A
+  * Hitachi Energy Lecture was cancelled.
 * November 30 (Wednesday) 9:30 AM - 10:15 AM: BNY Mellon Lecture on Security and Performance Testing
   * Speaker: Vittal Kommireddy, Head Of Quality Engineering - CMIST, [LinkedIn](https://www.linkedin.com/in/vittal-kommireddy-a1857621/)
   * Posvar Hall 3415
