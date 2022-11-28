@@ -25,7 +25,7 @@
 # CS 1632 - Software Quality Assurance
 Fall Semester 2022 - Supplementary Exercise 4
 
-* DUE: December 2 (Friday), 2022 11:59 PM
+* DUE: December 7 (Wednesday), 2022 11:59 PM
 
 ## Description
 
@@ -1353,6 +1353,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          platforms: linux/amd64,linux/arm64,linux/arm/v7
 ```
 
 The workflow publishes the web server Docker image to ghcr.io (the GitHub
