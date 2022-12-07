@@ -192,6 +192,8 @@ public class PlainJUnitTest {
 	 *                  Call logic.advanceStep() in a loop until it returns false (the machine terminates).
 	 *                  Calculate expected bean counts for each slot after having called logic.lowerHalf(),
 	 *                  from current slot bean counts, and store into an expectedSlotCounts array.
+	 *                  (The total count should be N/2 or (N+1)/2 depending on whether N is even or odd,
+	 *                  where N is the original bean count.)
 	 *                  Call logic.lowerHalf().
 	 *                  Construct an observedSlotCounts array that stores current bean counts for each slot.
 	 * Invariants: expectedSlotCounts matches observedSlotCounts exactly.
@@ -213,6 +215,8 @@ public class PlainJUnitTest {
 	 *                  Call logic.advanceStep() in a loop until it returns false (the machine terminates).
 	 *                  Calculate expected bean counts for each slot after having called logic.upperHalf(),
 	 *                  from current slot bean counts, and store into an expectedSlotCounts array.
+	 * 	                (The total count should be N/2 or (N+1)/2 depending on whether N is even or odd,
+	 *                  where N is the original bean count.)
 	 *                  Call logic.upperHalf().
 	 *                  Construct an observedSlotCounts array that stores current bean counts for each slot.
 	 * Invariants: expectedSlotCounts matches observedSlotCounts exactly.
