@@ -38,7 +38,7 @@
     <dependency>
       <groupId>com.github.spotbugs</groupId>
       <artifactId>spotbugs-annotations</artifactId>
-      <version>4.7.1</version>
+      <version>4.7.3</version>
     </dependency>
 
 
@@ -46,7 +46,7 @@
       <groupId>gov.nasa</groupId>
       <artifactId>jpf-core</artifactId>
       <version>1.0.0</version>
-      <systemPath>${pom.basedir}/jpf-core/build/jpf-classes.jar</systemPath>
+      <systemPath>${pom.basedir}/jpf-core/build/jpf.jar</systemPath>
       <scope>system</scope>
     </dependency>
 
@@ -97,7 +97,7 @@
         <plugin>
           <groupId>com.github.spotbugs</groupId>
           <artifactId>spotbugs-maven-plugin</artifactId>
-          <version>4.7.1.1</version>
+          <version>4.7.3.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -133,7 +133,7 @@
       <plugin>
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-maven-plugin</artifactId>
-        <version>4.7.1.1</version>
+        <version>4.7.3.0</version>
         <configuration>
           <effort>Max</effort>
           <threshold>Low</threshold>
